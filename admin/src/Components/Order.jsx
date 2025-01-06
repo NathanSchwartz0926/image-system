@@ -15,7 +15,7 @@ const Order = () => {
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [designer, setDesigner] = useState([]);
 
-  
+  const backendUrl = import.meta.env.VITE_BACKEND_URL
 
   const fetchOrder = () => {
     const orderData = orders.find((item) => item._id === orderId);
@@ -348,7 +348,7 @@ const Order = () => {
           await Promise.all(
             order.products.map(async (product) => {
               const params = new URLSearchParams({ branchName, imageName: product.img });
-              const response = await fetch(`http://localhost:4000/api/genImage/get-image-with-date?${params.toString()}`);
+              const response = await fetch(`${backendUrl}/api/genImage/get-image-with-date?${params.toString()}`);
               if (!response.ok) {
                 throw new Error("Failed to fetch image for " + product.name);
               }
