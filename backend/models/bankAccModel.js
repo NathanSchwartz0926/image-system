@@ -216,7 +216,7 @@ const initializeDatabase = async () => {
                     "Decline"
                 ],
                 password: 1136,
-                branchName: "Kuzhalmannam  II",
+                branchName: "Kuzhalmannam II",
                 address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702"
             }
         ]
