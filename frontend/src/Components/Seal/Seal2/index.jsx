@@ -33,7 +33,7 @@ const Seal2 = ({ branchName }) => {
           <circle cx="50" cy="50" r="50" fill="transparent" stroke="transparent" strokeWidth="2" />
           <path id="smileCurve" d="M 30,65 A 20,19 0 0,0 70,65" fill="transparent" />
           <text className="seal2-text1">
-            <textPath href="#smileCurve" textAnchor="middle" startOffset="50%" fontSize="5" fill="black" fontFamily="Arial" fontWeight="bold">
+            <textPath href="#smileCurve" textAnchor="middle" startOffset="50%" fontSize="4.5px" fill="black" fontFamily="Arial" fontWeight="bold">
               {branchName} Branch
             </textPath>
           </text>

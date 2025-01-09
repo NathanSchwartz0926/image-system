@@ -8,7 +8,7 @@ const Cart = () => {
   return (
     <div className='w-[90%]'>
         <h2 className="text-2xl font-bold text-gray-800">Cart</h2>
-        <ul className="mt-4 flex gap-2 h-44">
+        <ul className="mt-4 grid grid-cols-6 gap-5" style = {{rowGap: "2rem"}}>
             {cart.length > 0 ? cart.map((item, index) => (
             <li
                 key={index}
