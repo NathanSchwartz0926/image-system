@@ -23,7 +23,7 @@ input[type="number"] {
 @font-face {
   font-family: "Swis721 CN BT";
   /* src: url("./assets/Swis721cnbtrusbyme_bold.otf"); */
-  src: url("./assets/fonts/Swis721cnbtrusbyme_bold.otf");
+  src: url('./assets/fonts/swis721cnbtrusbyme_bold.otf');
 } 
 
 @font-face {
