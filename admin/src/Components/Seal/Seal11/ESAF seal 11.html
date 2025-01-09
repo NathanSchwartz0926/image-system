@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash paid Stamp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            flex-direction: column;
+        }
+
+        .stamp-container {
+            width: 59mm;
+            height: 45mm;
+            border: 3px solid black;
+            position: relative;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: black;
+        }
+
+        .stamp-header {
+            font-family: 'Corbel', sans-serif;
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 0;
+            white-space: nowrap; /* Prevent line break */
+        }
+
+        .branch {
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+            font-weight: bold;
+            margin: -5px 0 0 0; /* Reduced space with negative margin */
+        }
+
+        .inner-rectangle {
+            width: 35mm;
+            height: 17mm;
+            border: 1pt solid black;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .date {
+            font-family: 'Swis721 CN BT', sans-serif;
+            font-size: 15pt;
+            color: red;
+        }
+
+        .cash {
+            font-family: Arial, sans-serif;
+            font-size: 16.616pt;
+            font-weight: bold;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            font-size: 8pt;
+            font-weight: bold;
+            gap: 10px; /* Adjusted gap to bring checkboxes closer */
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Added gap for spacing between label and checkbox */
+        }
+
+        .option-label {
+            font-family: Arial, sans-serif;
+        }
+
+        .checkbox {
+            width: 4.309mm;
+            height: 4mm;
+            border: 2pt solid black;
+            display: inline-block;
+        }
+
+        .details {
+            margin-top: 20px;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function getCurrentDate() {
+            const date = new Date();
+            const options = { day: '2-digit', month: 'short', year: 'numeric' };
+            return date.toLocaleDateString('en-GB', options).toUpperCase();
+        }
+
+        window.onload = () => {
+            document.getElementById('date').innerText = getCurrentDate();
+        };
+    </script>
+</head>
+<body>
+    <div class="stamp-container">
+        <div class="stamp-header">ESAF Small Finance Bank Ltd.</div>
+        <div class="branch">Araria Branch</div>
+        <div class="inner-rectangle">
+            <div class="date" id="date"></div>
+        </div>
+        <div class="cash">CASH PAID</div>
+        <div class="options">
+            <div class="option">
+                <span class="option-label">UV Check</span>
+                <div class="checkbox"></div>
+            </div>
+            <div class="option">
+                <span class="option-label">Sign Verf</span>
+                <div class="checkbox"></div>
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        Rubber Stamp with Date <br>(Polimer Stamp) <br>
+        Rs. 260/-
+    </div>
+</body>
+</html>

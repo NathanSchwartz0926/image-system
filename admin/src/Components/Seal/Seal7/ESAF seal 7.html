@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleared Stamp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .stamp {
+      width: 57mm; /* Increased width slightly */
+      height: 45mm; /* 45mm */
+      border: 3px solid black; /* Blue border */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px;
+      box-sizing: border-box;
+      color: black; /* Blue text */
+    }
+    .stamp .header {
+      text-align: center;
+      position: absolute;
+      top: 5px; /* Position near the top */
+      width: 100%;
+    }
+    .stamp .header .title {
+      font-family: 'Corbel', sans-serif;
+      font-size: 12pt;
+      font-weight: bold;
+      margin: 0;
+      white-space: nowrap; /* Prevent line break */
+    }
+    .stamp .header .branch {
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      font-weight: bold;
+      margin: 0;
+    }
+    .stamp .date-box {
+      width: 35mm; /* 35mm */
+      height: 17mm; /* 17mm */
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%; /* Positioned between bank name and "CLEARED" */
+      transform: translateY(-50%);
+    }
+    .stamp .date-box .date {
+      font-family: 'Swis721 Cn BT', sans-serif;
+      font-size: 16pt; /* Increased thickness */
+      color: red; /* Date color remains red */
+    }
+    .stamp .footer {
+      text-align: center;
+      position: absolute;
+      bottom: 5px; /* Position near the bottom */
+      width: 100%;
+    }
+    .stamp .footer .cleared {
+      font-family: Arial, sans-serif;
+      font-size: 20pt; /* Increased thickness */
+      font-weight: bold;
+      margin: 0;
+    }
+    .details {
+        margin-top: 20px;
+        font-size: 12px;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="stamp">
+    <div class="header">
+      <p class="title">ESAF Small Finance Bank Ltd.</p>
+      <p class="branch">Araria Branch</p>
+    </div>
+    <div class="date-box">
+      <p class="date" id="current-date"></p>
+    </div>
+    <div class="footer">
+      <p class="cleared">CLEARED</p>
+    </div>
+  </div>
+  <div class="details">
+    Rubber Stamp with Date <br>(Polimer Stamp) <br>
+    Rs. 260/-
+</div>
+  <script>
+    // Get the current date
+    function formatDate(date) {
+      const options = { day: "2-digit", month: "short", year: "numeric" };
+      return date.toLocaleDateString("en-GB", options).toUpperCase();
+    }
+
+    // Set the date dynamically
+    const currentDateElement = document.getElementById("current-date");
+    const currentDate = new Date();
+    currentDateElement.textContent = formatDate(currentDate);
+  </script>
+</body>
+</html>

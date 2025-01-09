@@ -3,19 +3,31 @@
 @tailwind utilities;
 
 body {
-    background-image: url("./assets/Adminportal.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: url("./assets/Adminportal.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-        /* Hide spin buttons in Firefox */
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
+/* Hide spin buttons in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@font-face {
+  font-family: "Swis721 CN BT";
+  src: url("./assets/Swis721cnbtrusbyme_bold.otf");
+}
+
+@font-face {
+    font-family: 'Corbel';
+    src:url('../assets/CORBEL.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+  }

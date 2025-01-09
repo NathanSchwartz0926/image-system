@@ -17,28 +17,28 @@ const PageContextProvider = (props) => {
     const [orderConfirm, setOrderConfirm] = useState(false)
     const [cart, setCart] = useState([])
     const [order, setOrder] = useState({
-        name : "",
-        empNum : "",
-        email : "",
-        phoneno : "",
-        billNumber : "",
-        cart : [],
-        bankIfsc : "ESMF0001924",
-        bankName : "ESAF Bank",
-        bankLogo : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
-        address : "Thiruvanmiyur",
-        remark : ""
+        name: "",
+        empNum: "",
+        email: "",
+        phoneno: "",
+        billNumber: "",
+        cart: [],
+        bankIfsc: "ESMF0001924",
+        bankName: "ESAF Bank",
+        bankLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
+        address: "Thiruvanmiyur",
+        remark: ""
     })
     const [branchInfo, setBranchInfo] = useState({})
 
     const newOrder = async () => {
         try {
-            const response = await axios.post(backendUrl+"/api/order/new", { order })
+            const response = await axios.post(backendUrl + "/api/order/new", { order })
 
-            if(response.data.success){
+            if (response.data.success) {
                 toast.success("Order Placed Successfully")
                 setCart([])
-            }else {
+            } else {
                 toast.error(response.data.message)
             }
         } catch (error) {
@@ -53,11 +53,11 @@ const PageContextProvider = (props) => {
             if (existingItem) {
                 return prevCart.map((cartItem) =>
                     cartItem.name === item.name
-                        ? { ...cartItem, qty: Number(cartItem.qty+qty[cartItem.name]), totalAmt: cartItem.totalAmt+(qty[cartItem.name]*item.price) }
+                        ? { ...cartItem, qty: Number(cartItem.qty + qty[cartItem.name]), totalAmt: cartItem.totalAmt + (qty[cartItem.name] * item.price) }
                         : cartItem
                 );
             } else {
-                return [...prevCart, { name: item.name, img: item.img, qty: qty[item.name], price: item.price, totalAmt: qty[item.name]*item.price }];
+                return [...prevCart, { name: item.name, img: item.img, qty: qty[item.name], price: item.price, totalAmt: qty[item.name] * item.price }];
             }
         });
         toast.success(`${item.name} Added To Cart`, {
@@ -69,7 +69,7 @@ const PageContextProvider = (props) => {
             draggable: true,
             progress: undefined,
             theme: "dark",
-            });
+        });
     };
 
     const incrementQty = (itemName) => {
@@ -96,16 +96,34 @@ const PageContextProvider = (props) => {
         setCart((prevCart) => prevCart.filter((cartItem) => cartItem.name !== itemName));
     };
 
+
     const products = [
-        {name: "Dater", img: product_img.cash_received_dater, price: 260},
-        {name: "Mini Dater", img: product_img.cleared_seal_dater, price: 70},
-        {name: "Approval", img: product_img.seal_authorized, price: 70},
-        {name: "Paid", img: product_img.cash_paid_dater, price: 70},
-        {name: "Decline", img: product_img.round_seal, price: 70},
-        {name: "Fake Note", img: product_img.transfer_seal, price: 70},
-        {name: "Number", img: product_img.number_seal, price: 70},
-        {name: "Locker", img: product_img.seal_branch_manager, price: 70},
+        { name: "Branch Round Seal", price: 70, img: 0 },
+        { name: "Signature Verified Round Seal", price: 70, img: 1 },
+        { name: "UV Verified Round Seal", price: 70 , img: 2},
+        { name: "ORIGINAL VERIFIED", price: 70 , img: 3},
+        { name: "TRANSFER", price: 260 , img:4},
+        { name: "RECEIVED", price: 260 , img:5},
+        { name: "CLEARED", price: 260 , img:6},
+        { name: "TOO LATE FOR TODAYS CLEARING", price: 260, img:7 },
+        { name: "All our Stamps are Cancelled", price: 70 , img:8},
+        { name: "CASH RECIEVED", price: 260 , img: 9},
+        { name: "CASH PAID", price: 260 , img: 10},
+        { name: "A/C PAYEE ONLY", price: 70 , img: 11},
+        { name: "For Seal Authorised Signatory", price: 70, img: 12 },
+        { name: "For Seal Branch Manager", price: 70, img: 13 },
+        { name: "Payees Account Will be Credited on Realisation", price: 70, img: 14 },
+        { name: "COUNTERFEIT BANK NOTE IMPOUNDED", price: 70, img: 15 },
+        { name: "MUTILATION GAURANTEED", price: 70, img: 16 },
+        { name: "Left Thump Impression", price: 70 , img: 17},
+        { name: "De Dupe Done No Multiple CIF Existing", price: 70, img: 18 },
+        { name: "Address Seal", price: 70, img: 19 },
+        { name: "FOR AND ON BEHALF OF MINOR", price: 70, img: 20 },
+        { name: "16 digit", price: 98, img: 21 },
+        { name: "Special Crossing stamp", price: 70, img: 22 },
+
     ]
+
 
     // useEffect(()=>{
     //     console.log(cart)
@@ -119,7 +137,7 @@ const PageContextProvider = (props) => {
         products,
         cart, addToCart, decrementQty, incrementQty, removeFromCart, setCart,
         order, setOrder, newOrder,
-        orderConfirm, setOrderConfirm, 
+        orderConfirm, setOrderConfirm,
         currency
     }
 

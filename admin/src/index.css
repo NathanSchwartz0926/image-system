@@ -8,3 +8,15 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
+@font-face {
+    font-family: "Swis721 CN BT";
+    src: url("./assets/Swis721cnbtrusbyme_bold.otf");
+  }
+  
+  @font-face {
+      font-family: 'Corbel';
+      src:url('../assets/CORBEL.TTF') format('truetype');
+      font-weight: normal;
+      font-style: normal; 
+    }

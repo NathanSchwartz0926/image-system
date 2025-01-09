@@ -1,0 +1,55 @@
+.seal21-body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+/* Container for the rubber stamp text */
+.seal21-stamp {
+  width: 45mm;
+  height: 16mm;
+  border: 0.2px solid black; /* Border thickness */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure top and bottom alignment */
+  text-align: center;
+  margin-bottom: 20px; /* Spacing below the rectangle */
+  padding: 0;
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+/* Text for "FOR AND ON BEHALF OF MINOR" */
+.seal21-minor-text {
+  font-family: "Swis721Cn BT";
+  font-size: 8.0pt; 
+  white-space: nowrap; /* Text size */
+  font-weight: 900; /* Bold text */
+  margin-top: -3px;
+  margin-left: -1px;
+  padding: 0;
+  width: 100%; /* Full width alignment */
+  text-align: center; /* Centers text horizontally */
+}
+
+/* Text for "Father / Mother / Guardian" */
+.seal21-parent-text {
+  font-family: "Swis721Cn BT";
+  font-size: 8.0pt; /* Text size */
+  font-weight: 900; 
+  text-align: center; /* Bold text */
+  margin-bottom: -3px;
+  padding: 0;
+}
+
+/* Pricing details text (if used in the future) */
+.seal21-price {
+  font-family: 'Arial';
+  font-size: 12px; /* Text size */
+  text-align: center;
+  line-height: 1.5; /* Line spacing */
+}

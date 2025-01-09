@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Too late for todays clearing Stamp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .stamp {
+      width: 57mm; /* Increased width slightly */
+      height: 45mm; /* 45mm */
+      border: 3px solid black; /* Thickness of 2.0pt */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1px;
+      box-sizing: border-box;
+      color:black;
+    }
+    .stamp .header {
+      text-align: center;
+    }
+    .stamp .header .title {
+      font-family: 'Corbel', sans-serif;
+      font-size: 12pt;
+      font-weight: bold;
+      margin: 0;
+      white-space: nowrap; /* Prevent line break */
+    }
+    .stamp .header .branch {
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      font-weight: bold;
+      margin: 0;
+    }
+    .stamp .date-box {
+      width: 35mm; /* 35mm */
+      height: 17mm; /* 17mm */
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .stamp .date-box .date {
+      font-family: 'Swis721 Cn BT', sans-serif;
+      font-size: 15pt;
+      color: red;
+    }
+    .stamp .footer {
+      text-align: center;
+    }
+    .stamp .footer .cleared {
+      font-family: Arial, sans-serif;
+      font-size: 18pt;
+      font-weight: bold;
+      margin: 0;
+    }
+    .stamp .footer .late {
+      font-family: Arial, sans-serif;
+      font-size: 12pt;
+      font-weight: bold;
+      margin: 0;
+    }
+    .details {
+        margin-top: 20px;
+        font-size: 12px;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="stamp">
+    <div class="header">
+      <p class="title">ESAF Small Finance Bank Ltd.</p>
+      <p class="branch">Araria Branch</p>
+    </div>
+    <div class="date-box">
+      <p class="date" id="current-date"></p>
+    </div>
+    <div class="footer">
+      
+      <p class="late">TOO LATE FOR <br>TODAYS CLEARING</p>
+    </div>
+  </div>
+  <div class="details">
+    Rubber Stamp with Date <br>(Polimer Stamp) <br>
+    Rs. 260/-
+</div>
+  <script>
+    // Get the current date
+    function formatDate(date) {
+      const options = { day: "2-digit", month: "short", year: "numeric" };
+      return date.toLocaleDateString("en-GB", options).toUpperCase();
+    }
+
+    // Set the date dynamically
+    const currentDateElement = document.getElementById("current-date");
+    const currentDate = new Date();
+    currentDateElement.textContent = formatDate(currentDate);
+  </script>
+</body>
+</html>

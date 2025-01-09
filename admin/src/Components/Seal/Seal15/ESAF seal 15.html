@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubber Stamp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .stamp-container {
+            width: 73mm;  /* Adjusted width for better text fit */
+            height: 25mm;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 0mm;
+            box-sizing: border-box;
+            text-align: center;
+            color: black;
+            overflow: hidden; /* Ensure content doesn't overflow */
+        }
+
+        .stamp-container .top-text {
+            font-family: Corbel, sans-serif;
+            font-size: 10.1pt;
+            font-weight: 900;
+            letter-spacing: 0px;
+            margin-top: -3px; /* Remove margin */
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide overflow text */
+            text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+            width: 100%; /* Ensure it takes up the full width of the container */
+        }
+
+        .stamp-container .bank-name {
+            font-family: corbel;
+            font-size: 13.25pt;
+            font-weight: 900;
+            /* Add extra thickness */
+            letter-spacing: 0.5px;
+            margin-top: 0; /* Remove margin */
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide overflow text */
+            text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+            width: 100%; /* Ensure it takes up the full width of the container */
+        }
+
+        .stamp-container .branch-name {
+            font-family: 'Swis721 CN BT', sans-serif;
+            font-size: 10pt;
+            font-weight: 900;
+            font-weight: bolder; /* Add extra thickness */
+            letter-spacing: 0px;
+            margin-top: 46px; /* Added margin-top to create a gap between bank name and branch name */
+            white-space: nowrap; /* Prevent the branch name from wrapping into multiple lines */
+            overflow: hidden; /* Ensures long text doesn't overflow */
+            text-overflow: ellipsis;
+            align-self: flex-end; /* Adds ellipsis if text is too long */
+        }
+
+        .details {
+            margin-top: 20px;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="stamp-container">
+            <div class="top-text">Payees Account Will be Credited on Realisation</div>
+            <div class="bank-name">For ESAF Small Finance Bank Ltd.</div>
+            <div class="branch-name">Authorised Signatory, Araria Branch</div>
+        </div>
+        <div class="details">
+            Rubber Stamp<br> (Polimer Stamp) <br>
+            Rs. 70/-
+        </div>
+    </div>
+</body>
+</html>
