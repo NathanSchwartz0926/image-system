@@ -32,7 +32,7 @@ const Cart = () => {
                 </button>
             </li>
             )) : 
-                <div className='mb-3 flex-1 flex flex-col justify-center items-center bg-white shadow-md rounded-lg h-44'>
+                <div className='mb-3 flex-1 flex flex-col justify-center items-center bg-white shadow-md rounded-lg h-44' style = {{width: "89vw"}}>
                     <p className='text-xl'>Your Cart Is Empty</p>
                 </div>
             }
