@@ -24,8 +24,6 @@ const Login = () => {
         await setLogin(response.data.success)
         await setBranchInfo(response.data.branchInfo)
 
-        console.log(login)
-        console.log(branchInfo)
         localStorage.setItem('login', response.data.success)
         localStorage.setItem('branchName', branchName)
       }

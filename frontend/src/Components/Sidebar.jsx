@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 
 const Sidebar = () => {
 
-    const { cart, setOrder, newOrder, order, branchInfo } = useContext(PageContext) 
+    const {  cart, setOrder, newOrder, order, branchInfo,  getBranchInfo } = useContext(PageContext) 
 
     const [name, setName] = useState("")
     const [empNum, setEmpNum] = useState("")
@@ -17,11 +17,14 @@ const Sidebar = () => {
         const generatedBillNumber = `${Date.now()}`;
         return generatedBillNumber
     }
-
+    useEffect(() => {
+        getBranchInfo()
+      }, []);
     const orderConfirm = async (e, name, empNum, email, phoneno, cart, remark) => {
+        // console.log(branchInfo)
         const bill = generateBillNumber()
         e.preventDefault();
-  
+
         const newOrderData = {
             name,
             empNum,
