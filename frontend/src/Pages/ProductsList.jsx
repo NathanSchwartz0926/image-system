@@ -49,7 +49,7 @@ const Products = () => {
     <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />]
   
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchImages = async () => {
       try {
         const fetchedImages = {};
@@ -74,7 +74,7 @@ const Products = () => {
     };
 
     fetchImages();
-  }, [products]);
+  }, [products]);*/
 
   return (
     <div className="px-6 mb-4 w-[90%]">
