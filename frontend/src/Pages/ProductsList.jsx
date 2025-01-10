@@ -88,12 +88,7 @@ const Products = () => {
           >
             <div className='h-40 flex items-center justify-center'>
               <div className="h-40 flex items-center justify-center" style={{
-                width: "300px",
-                height: "200px",
-                border: "1px solid #ddd",
-                padding: "20px",
                 textAlign: "center",
-                display: "inline-block",
                 transition: "transform 0.3s ease", // Smooth transition
                 transformOrigin: "center", // Zoom from center
               }}
