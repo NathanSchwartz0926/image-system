@@ -41,13 +41,13 @@ const Products = () => {
   const backendUrl = import.meta.env.VITE_BACKEND_URL
   const branchName = localStorage.getItem("branchName");
 
-  const seals = [<Seal1 branchName = {branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} /> , <Seal4 branchName={branchName}/>,
-    <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
-    <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
-    <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
-    <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
-    <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />]
-  
+  const seals = [<Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
+  <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
+  <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
+  <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
+  <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
+  <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />]
+
 
   /*useEffect(() => {
     const fetchImages = async () => {
@@ -79,15 +79,27 @@ const Products = () => {
   return (
     <div className="px-6 mb-4 w-[90%]">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">Products</h1>
-      <ul className="grid grid-cols-4 gap-5" style = {{rowGap: "2rem"}}>
+      <ul className="grid grid-cols-4 gap-5" style={{ rowGap: "2rem" }}>
         {products.map((product, index) => (
           <li
             key={index}
             className="p-4 bg-white shadow-md rounded-lg flex flex-col"
-            style = {{height: "105%", justifyContent: "space-between"}}
+            style={{ height: "105%", justifyContent: "space-between" }}
           >
             <div className='h-40 flex items-center justify-center'>
-              <div className="h-40 flex items-center justify-center">
+              <div className="h-40 flex items-center justify-center" style={{
+                width: "300px",
+                height: "200px",
+                border: "1px solid #ddd",
+                padding: "20px",
+                textAlign: "center",
+                display: "inline-block",
+                transition: "transform 0.3s ease", // Smooth transition
+                transformOrigin: "center", // Zoom from center
+              }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
+              >
                 {/*images[product.name] ? (
                   <img
                     src={images[product.name]}
