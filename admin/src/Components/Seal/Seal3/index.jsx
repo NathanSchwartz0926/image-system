@@ -35,7 +35,7 @@ const Seal3 = ({ branchName }) => {
           <path id="smileCurve" d="M 30,65 A 20,19 0 0,0 70,65" fill="transparent" />
 
           <text className="seal3-text1">
-            <textPath href="#smileCurve" textAnchor="middle" startOffset="50%" fontSize="5" fill="black" fontFamily="Arial">
+            <textPath href="#smileCurve" textAnchor="middle" startOffset="50%" fontSize="4.5" fill="black" fontFamily="Arial">
               {branchName} Branch
             </textPath>
           </text>

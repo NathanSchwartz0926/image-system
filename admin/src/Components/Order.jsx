@@ -6,6 +6,32 @@ import { toast } from "react-toastify";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
+import Seal1 from '../Components/Seal/Seal1';
+import Seal2 from '../Components/Seal/Seal2';
+import Seal3 from '../Components/Seal/Seal3';
+import Seal4 from '../Components/Seal/Seal4';
+import Seal5 from '../Components/Seal/Seal5';
+import Seal6 from '../Components/Seal/Seal6';
+import Seal7 from '../Components/Seal/Seal7';
+import Seal8 from '../Components/Seal/Seal8';
+import Seal9 from '../Components/Seal/Seal9';
+import Seal10 from '../Components/Seal/Seal10';
+import Seal11 from '../Components/Seal/Seal11';
+import Seal12 from '../Components/Seal/Seal12';
+import Seal13 from '../Components/Seal/Seal13';
+import Seal14 from '../Components/Seal/Seal14';
+import Seal15 from '../Components/Seal/Seal15';
+import Seal16 from '../Components/Seal/Seal16';
+import Seal17 from '../Components/Seal/Seal17';
+import Seal18 from '../Components/Seal/Seal18';
+import Seal19 from '../Components/Seal/Seal19';
+import Seal20 from '../Components/Seal/Seal20';
+import Seal21 from '../Components/Seal/Seal21';
+import Seal22 from '../Components/Seal/Seal22';
+import Seal23 from '../Components/Seal/Seal23';
+
+
+
 const Order = () => {
   const { orderId } = useParams();
   const { orders, setOrders, designers, production, setProduction, discount } =
@@ -338,35 +364,42 @@ const Order = () => {
 
   const [images, setImages] = useState({});
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const branchName = order.address
-        const fetchedImages = {};
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     try {
+  //       const branchName = order.address
+  //       const fetchedImages = {};
         
-        if(order)
-          await Promise.all(
-            order.products.map(async (product) => {
-              const params = new URLSearchParams({ branchName, imageName: product.img });
-              const response = await fetch(`${backendUrl}/api/genImage/get-image-with-date?${params.toString()}`);
-              if (!response.ok) {
-                throw new Error("Failed to fetch image for " + product.name);
-              }
-              const blob = await response.blob();
-              const objectURL = URL.createObjectURL(blob);
-              fetchedImages[product.name] = objectURL;
-            })
-          );
+  //       if(order)
+  //         await Promise.all(
+  //           order.products.map(async (product) => {
+  //             const params = new URLSearchParams({ branchName, imageName: product.img });
+  //             const response = await fetch(`${backendUrl}/api/genImage/get-image-with-date?${params.toString()}`);
+  //             if (!response.ok) {
+  //               throw new Error("Failed to fetch image for " + product.name);
+  //             }
+  //             const blob = await response.blob();
+  //             const objectURL = URL.createObjectURL(blob);
+  //             fetchedImages[product.name] = objectURL;
+  //           })
+  //         );
 
-        setImages(fetchedImages);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    };
+  //       setImages(fetchedImages);
+  //     } catch (error) {
+  //       console.error("Error fetching images:", error);
+  //     }
+  //   };
 
-    fetchImages();
-  }, [order.products]);
-  
+  //   fetchImages();
+  // }, [order.products]);
+  const seals = [
+    <Seal1 branchName = {order.address} />, <Seal2 branchName={order.address} />, <Seal3 branchName={order.address} /> , <Seal4 branchName={order.address}/>,
+    <Seal5 branchName={order.address} />, <Seal6 branchName={order.address} />, <Seal7 branchName={order.address} />, <Seal8 branchName={order.address} />,
+    <Seal9 branchName={order.address} />, <Seal10 branchName={order.address} />, <Seal11 branchName={order.address} />, <Seal12 branchName={order.address} />,
+    <Seal13 branchName={order.address} />, <Seal14 branchName={order.address} />, <Seal15 branchName={order.address} />, <Seal16 branchName={order.address} />,
+    <Seal17 branchName={order.address} />, <Seal18 branchName={order.address} />, <Seal19 branchName={order.address} />, <Seal20 branchName={order.address} />,
+    <Seal21 branchName={order.address} />, <Seal22 branchName={order.address} />, <Seal23 branchName={order.address} />
+  ];
   return (
     <div className="w-full flex justify-center items-center">
       <div className="w-[90%] py-4">
@@ -420,14 +453,17 @@ const Order = () => {
                       key={index}
                     >
                       <div className="flex-1 flex items-center justify-center">
-                      {images[item.name] ? (
-                        <img
-                          src={images[item.name]}
-                          alt={item.name}
-                        />
-                      ) : (
-                        <p>Loading image...</p>
-                      )}
+                      {
+                        // images[item.name] ? (
+                        //   <img
+                        //     src={images[item.name]}
+                        //     alt={item.name}
+                        //   />
+                        // ) : (
+                        //   <p>Loading image...</p>
+                        // )
+                        seals[item.img]
+                      }
                       </div>
                       <div className="flex flex-col flex-1 ml-4 justify-between text-sm">
                         <span>

@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   margin: 0;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   font-family: Arial, sans-serif;
 }
 
@@ -116,13 +116,13 @@
 .seal3-star1 {
   position: absolute;
   margin-left: -77px;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 .seal3-star2 {
   position: absolute;
   margin-left: 77px;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .seal3-text_path {

@@ -218,6 +218,24 @@ const initializeDatabase = async () => {
                 password: 1136,
                 branchName: "Kuzhalmannam II",
                 address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702"
+            },
+            {
+                ifsc: "ESMF0001194",
+                bankName: "ESAF Bank",
+                "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
+                products: [
+                    "Dater",
+                    "Mini Dater",
+                    "Approval",
+                    "Paid",
+                    "Locker",
+                    "Number",
+                    "Fake Note",
+                    "Decline"
+                ],
+                password: "0212",
+                branchName: "Araria",
+                address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702"
             }
         ]
 
