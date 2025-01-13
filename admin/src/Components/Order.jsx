@@ -369,7 +369,7 @@ const Order = () => {
   //     try {
   //       const branchName = order.address
   //       const fetchedImages = {};
-        
+
   //       if(order)
   //         await Promise.all(
   //           order.products.map(async (product) => {
@@ -393,7 +393,7 @@ const Order = () => {
   //   fetchImages();
   // }, [order.products]);
   const seals = [
-    <Seal1 branchName = {order.address} />, <Seal2 branchName={order.address} />, <Seal3 branchName={order.address} /> , <Seal4 branchName={order.address}/>,
+    <Seal1 branchName={order.address} />, <Seal2 branchName={order.address} />, <Seal3 branchName={order.address} />, <Seal4 branchName={order.address} />,
     <Seal5 branchName={order.address} />, <Seal6 branchName={order.address} />, <Seal7 branchName={order.address} />, <Seal8 branchName={order.address} />,
     <Seal9 branchName={order.address} />, <Seal10 branchName={order.address} />, <Seal11 branchName={order.address} />, <Seal12 branchName={order.address} />,
     <Seal13 branchName={order.address} />, <Seal14 branchName={order.address} />, <Seal15 branchName={order.address} />, <Seal16 branchName={order.address} />,
@@ -452,26 +452,36 @@ const Order = () => {
                       className="border-2 border-black rounded-lg flex p-3"
                       key={index}
                     >
-                      <div className="flex-1 flex items-center justify-center">
-                      {
-                        // images[item.name] ? (
-                        //   <img
-                        //     src={images[item.name]}
-                        //     alt={item.name}
-                        //   />
-                        // ) : (
-                        //   <p>Loading image...</p>
-                        // )
-                        seals[item.img]
-                      }
-                      </div>
-                      <div className="flex flex-col flex-1 ml-4 justify-between text-sm">
-                        <span>
-                          <b>PRODUCT : {item.name}</b>
-                        </span>
-                        <span>
-                          <b>QUANTITY : {item.qty}</b>
-                        </span>
+                      <div className="flex flex-col flex-1 justify-center items-center" >
+                        <div style={{
+                          textAlign: "center",
+                          transition: "transform 0.3s ease", // Smooth transition
+                          transformOrigin: "center", // Zoom from center
+                        }}
+                          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
+                          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
+                        >
+                          {
+                            // images[item.name] ? (
+                            //   <img
+                            //     src={images[item.name]}
+                            //     alt={item.name}
+                            //   />
+                            // ) : (
+                            //   <p>Loading image...</p>
+                            // )
+                            seals[item.img]
+                          }
+                        </div>
+
+                        <div className="flex flex-col ml-4 mt-2 items-start text-sm">
+                          <span>
+                            <b>PRODUCT : {item.name}</b>
+                          </span>
+                          <span>
+                            <b>QUANTITY : {item.qty}</b>
+                          </span>
+                        </div>
                       </div>
                       <div className="flex flex-col justify-center items-end">
                         <input

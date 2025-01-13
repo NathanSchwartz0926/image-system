@@ -4,10 +4,10 @@ import { PageContext } from '../context/PageContext';
 const Cart = () => {
 
     const { cart, currency, removeFromCart } = useContext(PageContext);
-
+    const totalAmt = cart.reduce((acc, item) => acc + item.totalAmt, 0);
   return (
     <div className='w-[90%]'>
-        <h2 className="text-2xl font-bold text-gray-800">Cart</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Cart(Total Amount: ₹{totalAmt})</h2>
         <ul className="mt-4 grid grid-cols-6 gap-5" style = {{rowGap: "2rem"}}>
             {cart.length > 0 ? cart.map((item, index) => (
             <li
