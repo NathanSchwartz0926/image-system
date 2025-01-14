@@ -223,20 +223,35 @@ const Order = () => {
     printWindow.print();
   };
 
-  const detailTextPerSeal = (index) => {
-    switch (index) {
-      case 4:
-      case 5:
-      case 6:
-      case 7:
-      case 9:
-      case 10:
-        return "     Rubber Stamp with Date\n            (Polimer Stamp)\n                  RS.260/-"
-      case 22:
-        return "      Special Crossing stamp\n             Rubber Stamp\n             35mm × 4mm"
-      default:
-        return "              Rubber Stamp\n            (Polimer  Stamp)\n                    RS.70/-"
-    }
+  const detailTextPerSeal = (index, qty) => {
+    if (qty == 1)
+      switch (index) {
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 9:
+        case 10:
+          return "     Rubber Stamp with Date\n            (Polimer Stamp)\n                  RS.260/-"
+        case 22:
+          return "      Special Crossing stamp\n             Rubber Stamp\n             35mm × 4mm"
+        default:
+          return "              Rubber Stamp\n            (Polimer  Stamp)\n                    RS.70/-"
+      }
+    else
+      switch (index) {
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 9:
+        case 10:
+          return ` Rubber Stamp with Date × ${qty}\n            (Polimer Stamp)\n                  RS.260/-`
+        case 22:
+          return `  Special Crossing stamp × ${qty}\n             Rubber Stamp\n             35mm × 4mm`
+        default:
+          return `          Rubber Stamp × ${qty}\n            (Polimer  Stamp)\n                    RS.70/-`
+      }
   }
 
 
@@ -347,7 +362,7 @@ const Order = () => {
             const yPosition = cellY + (cellHeight - drawHeight) / 2; // Center vertically
 
             await doc.addImage(src, "PNG", xPosition, yPosition, drawWidth, drawHeight);
-            doc.text(detailTextPerSeal(i), cellX, cellY + cellHeight + 1)
+            doc.text(detailTextPerSeal(i, selectedProducts[i].qty), cellX, cellY + cellHeight + 1)
             resolve();
           };
         });
@@ -464,13 +479,13 @@ const Order = () => {
                     >
                       <div className="flex flex-col flex-1 justify-center items-center" >
                         <div
-                          // style={{
-                          //   textAlign: "center",
-                          //   transition: "transform 0.3s ease", // Smooth transition
-                          //   transformOrigin: "center", // Zoom from center
-                          // }}
-                          //  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
-                          //  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
+                          style={{
+                            textAlign: "center",
+                            transition: "transform 0.3s ease", // Smooth transition
+                            transformOrigin: "center", // Zoom from center
+                          }}
+                           onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
+                           onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
                           id={"seal" + index + "component"}
                         >
                           {

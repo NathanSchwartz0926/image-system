@@ -27,7 +27,8 @@ const Navbar = () => {
         <img src={logo} alt="logo" className='w-56' onClick={onClickLogo} />
         <img src = {branchInfo.logo} alt = "bank logo" className = 'w-56' />
         <div className='flex justify-between gap-10 items-center'>
-            <button className='flex items-center gap-2 text-2xl bg-red-600 text-white p-2 rounded-lg' onClick={onClickHandler}>
+            <button className='flex items-center gap-2 text-2xl bg-red-600 text-white p-2 rounded-lg' 
+                     onClick={onClickHandler}>
                 <span>LogOut</span>
                 <IoLogOut />
             </button>

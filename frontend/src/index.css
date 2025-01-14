@@ -18,6 +18,7 @@ input::-webkit-inner-spin-button {
 /* Hide spin buttons in Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  
 }
 
 @font-face {
@@ -33,3 +34,7 @@ input[type="number"] {
     font-weight: normal;
     font-style: normal; 
   }
+
+button {
+  font-family: Roboto;
+}
