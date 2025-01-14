@@ -5,6 +5,8 @@ import Navbar from "./Navbar";
 import { toast } from "react-toastify";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import html2canvas from "html2canvas";
+
 
 import Seal1 from '../Components/Seal/Seal1';
 import Seal2 from '../Components/Seal/Seal2';
@@ -40,6 +42,7 @@ const Order = () => {
   const [open, setOpen] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [designer, setDesigner] = useState([]);
+
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL
 
@@ -220,35 +223,17 @@ const Order = () => {
     printWindow.print();
   };
 
+  const detailTextPerSeal = (index) => {
+      let normal = "Rubber Stamp\n(Polimer Stamp)\nRS.70/-"
+      return normal;
+  }
+
   const generatePDF = async () => {
-    // Sample data for demonstration purposes
-    const products = order.selectedProducts;
-
-    let Amount = 0;
-    products.map((item) => (Amount += item.totalAmt));
-
-    console.log(products);
-    const prod = products
-      .map((item, index) => {
-        return `
-          <tr>
-            <td style="text-align:center;">${index + 1}</td>
-            <td>${item.name}</td>
-            <td style="text-align:center;">${item.qty}</td>
-            <td style="text-align:center;">${item.totalAmt}</td>
-            <td style="text-align:center;">${discount}</td>
-            <td style="text-align:center;">${item.totalAmt - item.totalAmt * (discount / 100)
-          }</td>
-          </tr>
-        `;
-      })
-      .join("");
-
     const doc = new jsPDF();
 
     // First page content
     doc.setFontSize(25);
-    doc.text("IMAGE SYSTEMS", 70, 20)
+    doc.text("IMAGE SYSTEMS", 70, 20);
     doc.setFontSize(20);
     doc.text("ORDER FORM", 83, 30);
     doc.setFontSize(12);
@@ -260,24 +245,24 @@ const Order = () => {
     doc.text("EMAIL:" + order.email, 120, 70);
     doc.text("ADDRESS:" + order.address, 10, 80);
 
-
     doc.text("ORDER DETAILS", 10, 95);
-    // Create a table
+
+    // Create table
     const tableColumn = ["NO.", "ITEM DESCRIPTION", "QTY", "PRICE", "DISCOUNT", "TOTAL"];
-    const tableRows = [
-    ];
+    const tableRows = [];
     let totalPrice = 0;
-    selectedProducts.map((item, index) => {
-      let row = [];
-      row.push(index + 1)
-      row.push(item.name)
-      row.push(item.qty)
-      row.push(item.totalAmt)
-      row.push(0)
-      row.push(item.totalAmt - item.totalAmt * (discount / 100))
-      tableRows.push(row)
-      totalPrice += item.totalAmt - item.totalAmt * (discount / 100)
-    })
+
+    order.selectedProducts.forEach((item, index) => {
+      tableRows.push([
+        index + 1,
+        item.name,
+        item.qty,
+        item.totalAmt,
+        discount,
+        item.totalAmt - item.totalAmt * (discount / 100),
+      ]);
+      totalPrice += item.totalAmt - item.totalAmt * (discount / 100); 
+    });
 
     tableRows.push(["METHOD", { content: "", colSpan: 3 }, "TAX", ""])
     tableRows.push(["DATE", { content: "", colSpan: 3 }, "SHIPPING", ""])
@@ -290,74 +275,79 @@ const Order = () => {
       startY: 100,
     });
 
-    // Second page content
-    const productImages = [];
-    selectedProducts.forEach((item) => {
-      //for (let i = 0; i < item.qty; i++) {
-      //productImages.push("../../" + item.img); // Adjust the path as necessary
-      productImages.push(images[item.name])
-      //}
-    });
+    // Second page: Render images of components
+    const renderComponentToImage = async (component, index) => {
+      const container = document.getElementById("seal" + index + "component");
+      
+      const canvas = await html2canvas(container, {
+        scale: 2, // Higher scale for better resolution
+        useCORS: true, // Ensures cross-origin images load correctly
+        allowTaint: false, // Prevents tainted canvas issues
+        backgroundColor: null, // Captures transparent backgrounds
+        width: container.offsetWidth + 10, // Ensures correct width
+        height: container.offsetHeight + 10, // Ensures correct height
+      });
+      return canvas.toDataURL("image/png");
+    };
 
-    async function loadProductImagesAndSave(doc, images) {
-      const cols = 3; // Number of columns
-      const rows = 5; // Number of rows
-      const maxWidth = 50; // Maximum width for each image
-      const maxHeight = 50; // Maximum height for each image
-      const margin = 4; // Margin between images
-      const maxCount = rows * cols;
+    const componentImages = await Promise.all(
+      seals.map(async (component, index) => await renderComponentToImage(component, index))
+    );
 
-      const imagePromises = images.map((src, index) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = src; // Path to your product image
+    const cols = 3; // Number of columns
+    const rows = 5; // Number of rows
+    const cellWidth = 50; // Width of each grid cell
+    const cellHeight = 40; // Height of each grid cell
+    const margin = 10; // Margin between cells
+    const perPage = cols * rows;
+
+    const arrangeComponentsOnPage = async (images, startIndex, endIndex) => {
+      for (let i = startIndex; i < endIndex; i++) {
+        const src = images[i];
+        const img = new Image();
+        img.src = src;
+
+        await new Promise((resolve) => {
           img.onload = async () => {
-            // Calculate the aspect ratio
             const aspectRatio = img.width / img.height;
-            // Determine the width and height while maintaining aspect ratio
-            let width, height;
+
+            let drawWidth, drawHeight;
+
             if (aspectRatio > 1) {
-              // Landscape
-              width = Math.min(maxWidth, img.width);
-              height = width / aspectRatio;
+              // Landscape image
+              drawWidth = Math.min(cellWidth, img.width);
+              drawHeight = drawWidth / aspectRatio;
             } else {
-              // Portrait or square
-              height = Math.min(maxHeight, img.height);
-              width = height * aspectRatio;
+              // Portrait or square image
+              drawHeight = Math.min(cellHeight, img.height);
+              drawWidth = drawHeight * aspectRatio;
             }
-            // Calculate x and y position based on index
-            const xPosition = (index % cols) * (maxWidth + margin) + 25;
-            const yPosition =
-              Math.floor(index / cols) * (maxHeight + margin) +
-              15 +
-              (maxHeight - height) / 2; // Start below the table
-            await doc.addImage(img, "PNG", xPosition, yPosition, width, height);
+
+            // Center the image within the cell
+            const cellX = (i % cols) * (cellWidth + margin) + 20;
+            const cellY = Math.floor((i % perPage) / cols) * (cellHeight + margin) + 20;
+
+            const xPosition = cellX + (cellWidth - drawWidth) / 2; // Center horizontally
+            const yPosition = cellY + (cellHeight - drawHeight) / 2; // Center vertically
+
+            await doc.addImage(src, "PNG", xPosition, yPosition, drawWidth, drawHeight);
+            doc.text(detailTextPerSeal(i), cellX, cellY + cellHeight)
             resolve();
           };
-          img.onerror = () =>
-            reject(new Error(`Failed to load image at ${src}`));
         });
-      });
+      }
+    };
 
-      // Wait for all images to load
-      return Promise.all(imagePromises);
-    }
-
-    // Call the function with the product images
-    for (let i = 0; i < productImages.length; i += 15) {
+    for (let i = 0; i < componentImages.length; i += cols * rows) {
       doc.addPage();
-      let end = i + 15;
-      if (end >= productImages.length) end = productImages.length;
-
-      // Push the promise returned by loadProductImagesAndSave to the allPromises array
-      await loadProductImagesAndSave(doc, productImages.slice(i, end))
-
+      const end = Math.min(i + cols * rows, componentImages.length);
+      await arrangeComponentsOnPage(componentImages, i, end);
     }
 
-    // Wait for all pages' images to load before saving the document
     doc.save("order.pdf");
-
   };
+
+
   useEffect(() => {
     fetchOrder();
   }, [orderId, orders]);
@@ -453,13 +443,15 @@ const Order = () => {
                       key={index}
                     >
                       <div className="flex flex-col flex-1 justify-center items-center" >
-                        <div style={{
-                          textAlign: "center",
-                          transition: "transform 0.3s ease", // Smooth transition
-                          transformOrigin: "center", // Zoom from center
-                        }}
-                          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
-                          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
+                        <div
+                          // style={{
+                          //   textAlign: "center",
+                          //   transition: "transform 0.3s ease", // Smooth transition
+                          //   transformOrigin: "center", // Zoom from center
+                          // }}
+                          //  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
+                          //  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
+                          id={"seal" + index + "component"}
                         >
                           {
                             // images[item.name] ? (

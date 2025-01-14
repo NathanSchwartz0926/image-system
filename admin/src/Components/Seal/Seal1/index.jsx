@@ -8,7 +8,7 @@ const Seal1 = ({ branchName }) => {
   }, []);
   
   return (
-    <div className="seal1-body">
+    <div className="seal1-body" style = {{marginLeft: "3px", marginTop: "3px"}}>
       <div className="seal1-seal">
         <div className="seal1-outer-circle">
           <div className="seal1-middle-circle">
@@ -21,7 +21,7 @@ const Seal1 = ({ branchName }) => {
                   />
                 </div>
               </div>
-              <div className="seal1-text seal1-center" style={{ marginTop: "50px", fontFamily: "Arial, Helvetica, sans-serif", fontWeight: "bold", fontSize: "10px" }}>
+              <div className="seal1-text seal1-center" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: "bold", fontSize: "10px" }}>
                 1907
               </div>
             </div>

@@ -8,7 +8,7 @@ const Seal3 = ({ branchName }) => {
   }, []);
   
   return (
-    <div className="seal3-body">
+    <div className="seal3-body" style = {{marginLeft: "3px", marginTop: "3px"}}>
       <div className="seal3-seal">
         <div className="seal3-outer-circle">
           <div className="seal3-middle-circle">
