@@ -6,23 +6,26 @@ const Seal1 = ({ branchName }) => {
   useEffect(() => {
     import('../Seal1/styles.css');
   }, []);
-  
+
   return (
-    <div className="seal1-body" style = {{marginLeft: "3px", marginTop: "3px"}}>
+    <div className="seal1-body" style={{ marginLeft: "3px", marginTop: "3px" }}>
       <div className="seal1-seal">
         <div className="seal1-outer-circle">
           <div className="seal1-middle-circle">
             <div className="seal1-inner-circle">
-              <div className="seal1-logo">
-                <div>
-                  <img 
-                    src={logo} 
-                    style={{ height: "30px", width: "45px", marginTop: "2px", fontFamily: "Arial, Helvetica, sans-serif", alt: "" }} 
-                  />
+              <div className="flex flex-col">
+                <div className="seal1-logo">
+                  <div>
+                    <img
+                      src={logo}
+                      style={{ height: "30px", width: "45px", marginTop: "2px", fontFamily: "Arial, Helvetica, sans-serif", alt: "" }}
+                    />
+                  </div>
+                  <div className="seal1-text seal1-center" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: "bold", fontSize: "10px", marginTop: "33px"}}>
+                    1907
+                  </div>
                 </div>
-              </div>
-              <div className="seal1-text seal1-center" style={{ fontFamily: "Arial, Helvetica, sans-serif", fontWeight: "bold", fontSize: "10px" }}>
-                1907
+
               </div>
             </div>
           </div>
@@ -53,7 +56,7 @@ const Seal1 = ({ branchName }) => {
             points="50,10 61,40 95,40 67,58 78,90 50,70 22,90 33,58 5,40 39,40"
             fill="black"
             stroke="black"
-            strokeWidth="2" 
+            strokeWidth="2"
           />
         </svg>
       </div>
@@ -63,7 +66,7 @@ const Seal1 = ({ branchName }) => {
             points="50,10 61,40 95,40 67,58 78,90 50,70 22,90 33,58 5,40 39,40"
             fill="black"
             stroke="black"
-            strokeWidth="2" 
+            strokeWidth="2"
           />
         </svg>
       </div>

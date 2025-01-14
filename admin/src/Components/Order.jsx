@@ -224,9 +224,21 @@ const Order = () => {
   };
 
   const detailTextPerSeal = (index) => {
-      let normal = "Rubber Stamp\n(Polimer Stamp)\nRS.70/-"
-      return normal;
+    switch (index) {
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+      case 9:
+      case 10:
+        return "     Rubber Stamp with Date\n            (Polimer Stamp)\n                  RS.260/-"
+      case 22:
+        return "      Special Crossing stamp\n             Rubber Stamp\n             35mm × 4mm"
+      default:
+        return "              Rubber Stamp\n            (Polimer  Stamp)\n                    RS.70/-"
+    }
   }
+
 
   const generatePDF = async () => {
     const doc = new jsPDF();
@@ -247,6 +259,7 @@ const Order = () => {
 
     doc.text("ORDER DETAILS", 10, 95);
 
+
     // Create table
     const tableColumn = ["NO.", "ITEM DESCRIPTION", "QTY", "PRICE", "DISCOUNT", "TOTAL"];
     const tableRows = [];
@@ -261,7 +274,7 @@ const Order = () => {
         discount,
         item.totalAmt - item.totalAmt * (discount / 100),
       ]);
-      totalPrice += item.totalAmt - item.totalAmt * (discount / 100); 
+      totalPrice += item.totalAmt - item.totalAmt * (discount / 100);
     });
 
     tableRows.push(["METHOD", { content: "", colSpan: 3 }, "TAX", ""])
@@ -276,9 +289,11 @@ const Order = () => {
     });
 
     // Second page: Render images of components
+    doc.setFontSize(10);
+
     const renderComponentToImage = async (component, index) => {
       const container = document.getElementById("seal" + index + "component");
-      
+
       const canvas = await html2canvas(container, {
         scale: 2, // Higher scale for better resolution
         useCORS: true, // Ensures cross-origin images load correctly
@@ -290,8 +305,9 @@ const Order = () => {
       return canvas.toDataURL("image/png");
     };
 
+
     const componentImages = await Promise.all(
-      seals.map(async (component, index) => await renderComponentToImage(component, index))
+      selectedSeals.map(async (component, index) => await renderComponentToImage(component, index))
     );
 
     const cols = 3; // Number of columns
@@ -331,7 +347,7 @@ const Order = () => {
             const yPosition = cellY + (cellHeight - drawHeight) / 2; // Center vertically
 
             await doc.addImage(src, "PNG", xPosition, yPosition, drawWidth, drawHeight);
-            doc.text(detailTextPerSeal(i), cellX, cellY + cellHeight)
+            doc.text(detailTextPerSeal(i), cellX, cellY + cellHeight + 1)
             resolve();
           };
         });
@@ -390,6 +406,10 @@ const Order = () => {
     <Seal17 branchName={order.address} />, <Seal18 branchName={order.address} />, <Seal19 branchName={order.address} />, <Seal20 branchName={order.address} />,
     <Seal21 branchName={order.address} />, <Seal22 branchName={order.address} />, <Seal23 branchName={order.address} />
   ];
+  const selectedSeals = []
+  selectedProducts.map((item => {
+    selectedSeals.push(seals[item.img])
+  }))
   return (
     <div className="w-full flex justify-center items-center">
       <div className="w-[90%] py-4">
