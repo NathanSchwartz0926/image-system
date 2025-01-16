@@ -50,6 +50,8 @@ const Products = () => {
   const [manager28, setManager28] = useState("NATHAN");
   const [manager29, setManager29] = useState("NATHANS");
   const [manager30, setManager30] = useState("NATHANSCHWARTZ");
+  const [empno30, setEmpno30] = useState("12859");
+  const [empno28, setEmpno28] = useState("12859");
 
   const seals = [<Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
   <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
@@ -57,8 +59,8 @@ const Products = () => {
   <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
   <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
   <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />, <Seal24 branchName={branchName} />,
-  <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />, <Seal28 branchName={branchName} managerName = {manager28} />,
-  <Seal29 branchName={branchName} managerName = {manager29}/>, <Seal30 branchName={branchName} managerName = {manager30} />, 
+  <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />, <Seal28 branchName={branchName} managerName={manager28} empno={empno28} />,
+  <Seal29 branchName={branchName} managerName={manager29} />, <Seal30 branchName={branchName} managerName={manager30} empno={empno30} />,
   ]
 
 
@@ -129,34 +131,44 @@ const Products = () => {
               </p>
               {
                 index == 27 ?
-                <input style = {{textTransform: "uppercase"}} className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={manager28} placeholder='Manager Name' onChange={(e) =>
-                  setManager28(e.target.value.toUpperCase())
-                } />
-                :
-                <div/>
+                  <div>
+                    <input style={{ textTransform: "uppercase" }} className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={manager28} placeholder='Manager Name' onChange={(e) =>
+                      setManager28(e.target.value.toUpperCase())
+                    } />
+                    <input type="number" className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={empno28} placeholder='Emp. No.' onChange={(e) =>
+                      setEmpno28(Number(e.target.value))
+                    } />
+                  </div>
+                  :
+                  <div />
               }
               {
                 index == 28 ?
-                <input style = {{textTransform: "uppercase"}} className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={manager29} placeholder='Manager Name' onChange={(e) =>
-                  setManager29(e.target.value.toUpperCase())
-                } />
-                :
-                <div/>
+                  <input style={{ textTransform: "uppercase" }} className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={manager29} placeholder='Manager Name' onChange={(e) =>
+                    setManager29(e.target.value.toUpperCase())
+                  } />
+                  :
+                  <div />
               }
               {
                 index == 29 ?
-                <input style = {{textTransform: "uppercase"}} className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={manager30} placeholder='Manager Name' onChange={(e) =>
-                  setManager30(e.target.value.toUpperCase())
-                } />
-                :
-                <div/>
+                  <div>
+                  <input style={{ textTransform: "uppercase" }} className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={manager30} placeholder='Manager Name' onChange={(e) =>
+                    setManager30(e.target.value.toUpperCase())
+                  } />
+                  <input type="number" className='border-2 border-black flex-shrink  p-1.5 rounded-lg' value={empno30} placeholder='Emp. No.' onChange={(e) =>
+                      setEmpno30(Number(e.target.value))
+                    } />
+                  </div>
+                  :
+                  <div />
               }
             </div>
             <div className="flex justify-between items-center mt-2">
               <input type="number" className='border-2 border-black flex-shrink w-16 p-1.5 rounded-lg' value={qty[product.name] || ''} onChange={(e) =>
                 handleQtyChange(product.name, Math.max(1, Number(e.target.value)))
               } min="1" />
-              
+
               <button onClick={() => addToCart(product, qty)} className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
                 Add to Cart
               </button>
