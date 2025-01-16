@@ -23,7 +23,13 @@ import Seal20 from '../Components/Seal/Seal20';
 import Seal21 from '../Components/Seal/Seal21';
 import Seal22 from '../Components/Seal/Seal22';
 import Seal23 from '../Components/Seal/Seal23';
-
+import Seal24 from '../Components/Seal/Seal24';
+import Seal25 from '../Components/Seal/Seal25';
+import Seal26 from '../Components/Seal/Seal26';
+import Seal27 from '../Components/Seal/Seal27';
+import Seal28 from '../Components/Seal/Seal28';
+import Seal29 from '../Components/Seal/Seal29';
+import Seal30 from '../Components/Seal/Seal30';
 
 const Products = () => {
   const { products, currency, addToCart, } = useContext(PageContext);
@@ -46,7 +52,10 @@ const Products = () => {
   <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
   <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
   <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
-  <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />]
+  <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />, <Seal24 branchName={branchName} />,
+  <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />, <Seal28 branchName={branchName} />,
+  <Seal29 branchName={branchName} />, <Seal30 branchName={branchName} />, 
+  ]
 
 
   /*useEffect(() => {

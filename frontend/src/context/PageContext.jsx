@@ -140,7 +140,13 @@ const PageContextProvider = (props) => {
         { name: "FOR AND ON BEHALF OF MINOR", price: 70, img: 20 },
         { name: "16 digit", price: 98, img: 21 },
         { name: "Special Crossing stamp", price: 70, img: 22 },
-
+        { name: "Pay", price: 70 },
+        { name: "PAY HALF VALUE Prescriber Officer", price: 70 },
+        { name: "PAY HALF VALUE Receiver’s Initials ", price: 70 },
+        { name: "REJECT", price: 70 },
+        { name: "Emp Id Name Seal", price: 70 },
+        { name: "Branch Name Name Seal", price: 70 },
+        { name: "Emp Id Branch Name Name Seal", price: 70 },
     ]
 
 

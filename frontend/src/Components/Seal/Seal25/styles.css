@@ -1,0 +1,45 @@
+.seal2stamp {
+    width: 40mm;
+    height: 30mm;
+    border: 1.8pt solid black;
+    padding: 0px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+.seal2branch-name {
+    font-size: 8.4pt;
+    font-weight: bolder;
+    font-family: 'corbel';
+    margin: 0;
+}
+
+.seal2branch-name p{
+    font-size: 11pt;
+    margin: 0px;
+    font-family:'Swis721 Cn BT' ;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.seal2pay {
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.seal2officer {
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+}
+
+.seal2box{
+    width: 40mm;
+    text-align: center;
+}
+
+.details{
+    color: red;
+}
