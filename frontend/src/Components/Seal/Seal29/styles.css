@@ -1,5 +1,5 @@
     .seal6stamp {
-      width: 35mm; /* Adjust as per your needs */
+      /* width: 35mm; Adjust as per your needs */
       border: 1px solid black;
       display: flex;
       flex-direction: column;
@@ -32,5 +32,5 @@
       }
     
     .seal6box{
-        width: 40mm;
+        /* width: 40mm; */
     }

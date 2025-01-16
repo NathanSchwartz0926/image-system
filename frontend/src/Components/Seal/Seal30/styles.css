@@ -8,7 +8,7 @@ body {
 }
 
 .stamp-container {
-    width: 44mm;
+    /* width: 44mm; */
     /* height: 17mm; */
     border: 1px solid black;
     display: flex;

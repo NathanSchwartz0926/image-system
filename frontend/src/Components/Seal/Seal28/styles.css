@@ -1,5 +1,5 @@
  .seal5stamp {
-      width: 35mm;
+      /* width: 35mm; */
       height: 11mm;
       border: 1px solid black;
       display: flex;
@@ -26,5 +26,5 @@
       text-align: center;
     }
     .seal5box{
-        width: 40mm;
+        /* width: 40mm; */
     }

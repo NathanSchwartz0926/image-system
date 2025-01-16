@@ -8,7 +8,7 @@ const Seal28 = ({ branchName, managerName }) => {
   return (
     <div className="seal5box">
       <div className="seal5stamp">
-        <div className="seal5name">NATHAN</div>
+        <div className="seal5name">{managerName}</div>
         <div className="seal5emp-id">Emp. Id. 12859</div>
       </div>
     </div>
