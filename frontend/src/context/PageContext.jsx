@@ -16,6 +16,7 @@ const PageContextProvider = (props) => {
     const [login, setLogin] = useState(false)
     const [orderConfirm, setOrderConfirm] = useState(false)
     const [cart, setCart] = useState([])
+    const [oneBranchOrder, setOneBranchOrder] = useState({})
     const [order, setOrder] = useState({
         name: "",
         empNum: "",
@@ -57,6 +58,21 @@ const PageContextProvider = (props) => {
             if (response.data.success) {
                 toast.success("Order Placed Successfully")
                 setCart([])
+            } else {
+                toast.error(response.data.message)
+            }
+        } catch (error) {
+            console.error(error)
+            toast.error(error.message)
+        }
+    }
+
+    const loadOneBranchOrder = async () => {
+        try{
+            const response = await axios.post(backendUrl + "/api/order/oneBranch", {branchName})
+            if (response.data.success) {
+                toast.success("Previous Order Information loaded Successfully")
+                setOneBranchOrder(response.data.orders)
             } else {
                 toast.error(response.data.message)
             }
@@ -163,7 +179,8 @@ const PageContextProvider = (props) => {
         cart, addToCart, decrementQty, incrementQty, removeFromCart, setCart,
         order, setOrder, newOrder,
         orderConfirm, setOrderConfirm,
-        currency
+        currency,
+        oneBranchOrder, loadOneBranchOrder,
     }
 
     return (

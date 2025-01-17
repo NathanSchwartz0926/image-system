@@ -81,6 +81,20 @@ const allOrder = async (req, res) => {
     }
 }
 
+const oneBranchOrder = async (req, res) => {
+    const branchName = req.body.branchName
+    try {
+        const orders = await orderModel.find({address: branchName})
+
+        res.json({success : true, orders})
+
+    } catch (error) {
+        console.log(error);
+        res.json({success : false, message : error.message})
+    }
+}
+
+
 const bankOrder = async (req, res) => {
     try {
         const { bankIfsc } = req.body
@@ -95,4 +109,4 @@ const bankOrder = async (req, res) => {
 }
 
 
-export { newOrder, allOrder, bankOrder  }
+export { newOrder, allOrder, bankOrder, oneBranchOrder  }
