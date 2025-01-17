@@ -95,4 +95,4 @@ const bankOrder = async (req, res) => {
 }
 
 
-export { newOrder, allOrder, bankOrder }
+export { newOrder, allOrder, bankOrder  }
