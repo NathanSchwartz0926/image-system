@@ -236,6 +236,96 @@ const initializeDatabase = async () => {
                 password: "0212",
                 branchName: "Araria",
                 address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702"
+            },
+            {
+                ifsc: "CSBK0000339",
+                bankName: "CSB Bank",
+                "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
+                products: [
+                    "Dater",
+                    "Mini Dater",
+                    "Approval",
+                    "Paid",
+                    "Locker",
+                    "Number",
+                    "Fake Note",
+                    "Decline"
+                ],
+                password: "0111",
+                branchName: "Adoor",
+                address: "Kannamcode Road, Kannamkode, Adoor, Kerala 691523"
+            },
+            {
+                ifsc: "CSBK0000339",
+                bankName: "CSB Bank",
+                "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
+                products: [
+                    "Dater",
+                    "Mini Dater",
+                    "Approval",
+                    "Paid",
+                    "Locker",
+                    "Number",
+                    "Fake Note",
+                    "Decline"
+                ],
+                password: "001A",
+                branchName: "Alappuzha",
+                address: "Mullakkal, Alappuzha, Kerala 688001"
+            },
+            {
+                ifsc: "CSBK0000339",
+                bankName: "CSB Bank",
+                "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
+                products: [
+                    "Dater",
+                    "Mini Dater",
+                    "Approval",
+                    "Paid",
+                    "Locker",
+                    "Number",
+                    "Fake Note",
+                    "Decline"
+                ],
+                password: "0136",
+                branchName: "Alengad",
+                address: "Kottapuram, Alangad, Kerala 683511,"
+            },
+            {
+                ifsc: "CSBK0000339",
+                bankName: "CSB Bank",
+                "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
+                products: [
+                    "Dater",
+                    "Mini Dater",
+                    "Approval",
+                    "Paid",
+                    "Locker",
+                    "Number",
+                    "Fake Note",
+                    "Decline"
+                ],
+                password: "0006",
+                branchName: "Althara",
+                address: "Punnayurkulam, Thrissur, Kerala 679561"
+            },
+            {
+                ifsc: "CSBK0000339",
+                bankName: "CSB Bank",
+                "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
+                products: [
+                    "Dater",
+                    "Mini Dater",
+                    "Approval",
+                    "Paid",
+                    "Locker",
+                    "Number",
+                    "Fake Note",
+                    "Decline"
+                ],
+                password: "0425",
+                branchName: "Attur",
+                address: "Attur, Thrissur, Kerala 680583"
             }
         ]
 

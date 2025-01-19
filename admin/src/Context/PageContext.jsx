@@ -58,6 +58,7 @@ const PageContextProvider = (props) => {
             password : "1234",
             name : "UCO",
             logo : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYJEUTA-c9nIkxjBgMIHw6prRBZhF0wzWN-w&s",
+            // logo: "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491", this is csb bank logo
             address : "coimbatore",
             products : [
                 "dater","mini dater","approval","paid","decline","fake note","number","locker"

@@ -134,6 +134,7 @@ const PageContextProvider = (props) => {
 
 
     const products = getProducts(branchInfo.bankName)
+    console.log(products)
 
 
     // useEffect(()=>{
