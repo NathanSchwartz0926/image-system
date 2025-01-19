@@ -44,7 +44,7 @@ import CSBSeal10 from '../Components/CSBSeal/Seal10';
 import CSBSeal11 from '../Components/CSBSeal/Seal11';
 
 const Products = () => {
-  const { products, currency, addToCart, branchInfo, getBranchInfo } = useContext(PageContext);
+  const { products, currency, addToCart, branchInfo, getBranchInfo, managerData, setManagerData } = useContext(PageContext);
 
   const [qty, setQty] = useState({});
 
@@ -62,21 +62,7 @@ const Products = () => {
 
   const [images, setImages] = useState({});
   const backendUrl = import.meta.env.VITE_BACKEND_URL
-  const branchName = localStorage.getItem("branchName");
-
-  const [managerData, setManagerData] = useState({
-    ESAF: {
-      manager28: "NATHAN",
-      empno28: "12859",
-      manager29: "NATHANS",
-      manager30: "NATHANSCHWARTZ",
-      empno30: "12859",
-    },
-    CSB : {
-      manager2: "A. BABITHA RAHMAN",
-      empno2: "89479"
-    }
-  });
+  const branchName = localStorage.getItem("branchName");  
 
 
   const handleFormChange = (section, field, value) => {

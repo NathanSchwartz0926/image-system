@@ -7,7 +7,7 @@ import "jspdf-autotable";
 
 const Sidebar = () => {
 
-  const { cart, setOrder, newOrder, order, branchInfo, getBranchInfo } = useContext(PageContext)
+  const { cart, setOrder, newOrder, order, branchInfo, getBranchInfo, managerData } = useContext(PageContext)
 
   const [name, setName] = useState("")
   const [empNum, setEmpNum] = useState("")
@@ -38,9 +38,11 @@ const Sidebar = () => {
       bankIfsc: branchInfo.ifsc,
       bankName: branchInfo.bankName,
       bankLogo: branchInfo.logo,
-      address: branchInfo.branchName
+      address: branchInfo.branchName,
+      location: branchInfo.address,
+      managerData: managerData
     };
-
+    console.log(newOrderData)
     setOrder((prevOrder) => ({
       ...prevOrder,
       ...newOrderData

@@ -7,7 +7,7 @@ const Seal2 = ({ branchName }) => {
   }, []);
 
   return (
-    <div className="seal2-body" style = {{marginLeft: "3px", marginTop: "3px"}}>
+    <div className="seal2-body">
       <div className="seal2-seal">
         <div className="seal2-outer-circle">
           <div className="seal2-middle-circle">

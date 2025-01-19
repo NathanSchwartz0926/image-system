@@ -55,6 +55,13 @@ const orderSchema = new mongoose.Schema({
     remark : {
         type : String,
         required : true
+    },
+    location : {
+        type: String,
+        required: true
+    },
+    managerData : {
+        type: Object
     }
 })
 

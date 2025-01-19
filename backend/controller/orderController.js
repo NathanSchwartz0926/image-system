@@ -47,7 +47,9 @@ const newOrder = async (req, res) => {
             address : order.address,
             products : order.cart,
             totalAmt,
-            remark : order.remark
+            remark : order.remark,
+            location: order.location,
+            managerData: order.managerData
         }
 
         const newOrder = new orderModel(orderData);

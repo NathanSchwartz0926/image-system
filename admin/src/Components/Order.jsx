@@ -31,7 +31,25 @@ import Seal20 from '../Components/Seal/Seal20';
 import Seal21 from '../Components/Seal/Seal21';
 import Seal22 from '../Components/Seal/Seal22';
 import Seal23 from '../Components/Seal/Seal23';
+import Seal24 from '../Components/Seal/Seal24';
+import Seal25 from '../Components/Seal/Seal25';
+import Seal26 from '../Components/Seal/Seal26';
+import Seal27 from '../Components/Seal/Seal27';
+import Seal28 from '../Components/Seal/Seal28';
+import Seal29 from '../Components/Seal/Seal29';
+import Seal30 from '../Components/Seal/Seal30';
 
+import CSBSeal1 from '../Components/CSBSeal/Seal1';
+import CSBSeal2 from '../Components/CSBSeal/Seal2';
+import CSBSeal3 from '../Components/CSBSeal/Seal3';
+import CSBSeal4 from '../Components/CSBSeal/Seal4';
+import CSBSeal5 from '../Components/CSBSeal/Seal5';
+import CSBSeal6 from '../Components/CSBSeal/Seal6';
+import CSBSeal7 from '../Components/CSBSeal/Seal7';
+import CSBSeal8 from '../Components/CSBSeal/Seal8';
+import CSBSeal9 from '../Components/CSBSeal/Seal9';
+import CSBSeal10 from '../Components/CSBSeal/Seal10';
+import CSBSeal11 from '../Components/CSBSeal/Seal11';
 
 
 const Order = () => {
@@ -413,14 +431,45 @@ const Order = () => {
 
   //   fetchImages();
   // }, [order.products]);
-  const seals = [
-    <Seal1 branchName={order.address} />, <Seal2 branchName={order.address} />, <Seal3 branchName={order.address} />, <Seal4 branchName={order.address} />,
-    <Seal5 branchName={order.address} />, <Seal6 branchName={order.address} />, <Seal7 branchName={order.address} />, <Seal8 branchName={order.address} />,
-    <Seal9 branchName={order.address} />, <Seal10 branchName={order.address} />, <Seal11 branchName={order.address} />, <Seal12 branchName={order.address} />,
-    <Seal13 branchName={order.address} />, <Seal14 branchName={order.address} />, <Seal15 branchName={order.address} />, <Seal16 branchName={order.address} />,
-    <Seal17 branchName={order.address} />, <Seal18 branchName={order.address} />, <Seal19 branchName={order.address} />, <Seal20 branchName={order.address} />,
-    <Seal21 branchName={order.address} />, <Seal22 branchName={order.address} />, <Seal23 branchName={order.address} />
-  ];
+
+  const getBranchInfo = (order) => {
+    return {
+      bankName: order.bankName,
+      branchName: order.address,
+      address: order.location
+    }
+  }
+
+  let branchInfo = getBranchInfo(order)
+  
+  const getSealList = (order) => {
+    let branchName = order.address;
+    switch(order.bankName) {
+      case "ESAF Bank":
+        return [
+          <Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
+          <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
+          <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
+          <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
+          <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
+          <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />, <Seal24 branchName={branchName} />,
+          <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />,
+          <Seal28 branchName={branchName} managerName={order.managerData.ESAF.manager28} empno={order.managerData.ESAF.empno28} />,
+          <Seal29 branchName={branchName} managerName={order.managerData.ESAF.manager29} />,
+          <Seal30 branchName={branchName} managerName={order.managerData.ESAF.manager30} empno={order.managerData.ESAF.empno30} />
+        ];
+      case "CSB Bank":
+        return [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal2 branchInfo={branchInfo} managerName={order.managerData.CSB.manager2} empno={order.managerData.CSB.empno2}/>, <CSBSeal3 branchInfo={branchInfo} />,
+          <CSBSeal4 branchInfo={branchInfo}/>, <CSBSeal5 branchInfo={branchInfo}/>, <CSBSeal6 branchInfo={branchInfo}/>,
+          <CSBSeal7 branchInfo={branchInfo}/>, <CSBSeal8 branchInfo={branchInfo}/> , <CSBSeal9 branchInfo={branchInfo}/>,
+          <CSBSeal10 branchInfo={branchInfo}/>, <CSBSeal11 branchInfo={branchInfo}/>,
+        ];
+      default:
+        return [];
+    }
+  }
+
+  const seals = getSealList(order)
   const selectedSeals = []
   selectedProducts.map((item => {
     selectedSeals.push(seals[item.img])

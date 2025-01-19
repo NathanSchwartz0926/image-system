@@ -1,0 +1,93 @@
+.CSB-seal10-stamp {
+  width: 54mm;
+  height: 33mm;
+  border: 3px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: black;
+  padding: 3px;
+  line-height: 16px;
+}
+
+.CSB-seal10-stamp .CSB-seal10-header {
+  display: flex;
+  width: 100%;
+  margin-left: 3px;
+}
+
+.CSB-seal10-stamp .CSB-seal10-header img {
+  width: 5mm;
+  height: 5mm;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.CSB-seal10-stamp .CSB-seal10-header .CSB-seal10-text {
+  text-align: left;
+}
+
+.CSB-seal10-stamp .CSB-seal10-header .CSB-seal10-text .CSB-seal10-title {
+  font-family: Arial;
+  font-size: 14.543pt;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.CSB-seal10-stamp .CSB-seal10-header .CSB-seal10-text .CSB-seal10-branch {
+  font-family: Arial, sans-serif;
+  font-size: 8.8pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.CSB-seal10-stamp .CSB-seal10-date-box {
+  width: 25mm;
+  height: 10mm;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.CSB-seal10-stamp .CSB-seal10-date-box .CSB-seal10-date {
+  font-family: 'Swis721 Cn BT', sans-serif;
+  font-size: 12pt;
+  color: red;
+}
+
+.CSB-seal10-stamp .CSB-seal10-footer {
+  text-align: center;
+}
+
+.CSB-seal10-stamp .CSB-seal10-footer .received {
+  font-family: Arial, sans-serif;
+  font-size: 13.404pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.CSB-seal10-stamp .details {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: red;
+}
+
+.CSB-seal10-stamp .CSB-seal10-extra-lines {
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.CSB-seal10-stamp .CSB-seal10-extra-lines p {
+  margin: 0;
+  font-size: 12pt;
+}

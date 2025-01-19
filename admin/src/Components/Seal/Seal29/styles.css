@@ -1,0 +1,36 @@
+    .seal6stamp {
+      /* width: 35mm; Adjust as per your needs */
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      padding: 0px;
+      /* height: 11mm; */
+    }
+
+    .seal6role {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .seal6bank-name {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .seal6branch {
+      font-size: 12px;
+    }
+
+    .seal6size {
+        color: red;
+        font-size: 10px;
+        margin-top: 5px;
+        text-align: center;
+      }
+    
+    .seal6box{
+        /* width: 40mm; */
+    }

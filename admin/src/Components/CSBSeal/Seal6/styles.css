@@ -1,0 +1,36 @@
+.CSB-seal6-rect-stamp {
+    width: 40mm;
+    height: 20mm;
+    border: 2pt solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.CSB-seal6-rect-stamp .CSB-seal6-top-text {
+    font-size: 11pt;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+
+.CSB-seal6-rect-stamp .CSB-seal6-bottom-text {
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    border-top: 2pt solid black;
+    width: 36.2mm;
+    font-family: Arial;
+}
+
+.CSB-seal6-container {
+    width: 40mm;
+}
+
+.CSB-seal6-details {
+    text-align: center;
+    color: red;
+}

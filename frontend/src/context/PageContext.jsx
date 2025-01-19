@@ -29,11 +29,24 @@ const PageContextProvider = (props) => {
         bankName: "ESAF Bank",
         bankLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
         address: "Thiruvanmiyur",
-        remark: ""
+        remark: "",
+        location: ""
     })
     const [branchInfo, setBranchInfo] = useState({})
 
-   
+    const [managerData, setManagerData] = useState({
+        ESAF: {
+          manager28: "NATHAN",
+          empno28: "12859",
+          manager29: "NATHANS",
+          manager30: "NATHANSCHWARTZ",
+          empno30: "12859",
+        },
+        CSB : {
+          manager2: "A. BABITHA RAHMAN",
+          empno2: "89479"
+        }
+      });
 
     const getBranchInfo = async () => {
         try {
@@ -154,6 +167,7 @@ const PageContextProvider = (props) => {
         orderConfirm, setOrderConfirm,
         currency,
         oneBranchOrder, loadOneBranchOrder,
+        managerData, setManagerData
     }
 
     return (

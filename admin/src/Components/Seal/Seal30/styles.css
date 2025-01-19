@@ -1,0 +1,35 @@
+.seal30-stamp-container {
+    /* width: 44mm; */
+    /* height: 17mm; */
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.seal30-text {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin : 0;
+    font-weight: bold;
+}
+
+.seal30-name {
+    font-size: 12pt;
+    font-weight: bolder;
+}
+
+.seal30-designation, .seal30-emp-no, .seal30-branch {
+    font-size: 9pt;
+}
+
+.seal30-size-label {
+    font-size: 8pt;
+    color: red;
+    position: absolute;
+    bottom: -30px;
+    text-align: center;
+    font-weight: bolder;
+}

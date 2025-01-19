@@ -1,0 +1,30 @@
+ .seal5stamp {
+      /* width: 35mm; */
+      height: 11mm;
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .seal5name {
+      font-weight: bold;
+      font-size: 12pt;
+    }
+
+    .seal5emp-id {
+      font-size: 10pt;
+      font-weight: bold;
+    }
+
+    .seal5size {
+      color: red;
+      font-size: 10px;
+      margin-top: 5px;
+      text-align: center;
+    }
+    .seal5box{
+        /* width: 40mm; */
+    }

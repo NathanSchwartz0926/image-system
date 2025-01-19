@@ -1,0 +1,55 @@
+.CSB-seal11-stamp {
+    width: 56mm;
+    height: 36mm;
+    border: 2px solid black;
+    padding: 4px;
+    padding-top: 1px;
+    padding-right: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.CSB-seal11-logo {
+    margin-right: 9px;
+    height: 5mm;
+    width: 6mm;
+    margin-top: 5px;
+    padding-left: 2px;
+}
+
+.CSB-seal11-bankName {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.CSB-seal11-branch {
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.CSB-seal11-stop-payment {
+    font-family: Arial;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    line-height: 11px;
+}
+
+.CSB-seal11-branchName {
+    font-size: 9pt;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.CSB-seal11-details {
+    font-family: 'Swis721 CN Bt';
+    font-size: 7.5pt;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+    line-height: 15px;
+}
