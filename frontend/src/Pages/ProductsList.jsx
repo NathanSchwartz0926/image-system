@@ -32,6 +32,7 @@ import Seal29 from '../Components/Seal/Seal29';
 import Seal30 from '../Components/Seal/Seal30';
 
 import CSBSeal1 from '../Components/CSBSeal/Seal1';
+import CSBSeal2 from '../Components/CSBSeal/Seal2';
 import CSBSeal3 from '../Components/CSBSeal/Seal3';
 import CSBSeal4 from '../Components/CSBSeal/Seal4';
 import CSBSeal5 from '../Components/CSBSeal/Seal5';
@@ -71,6 +72,10 @@ const Products = () => {
       manager30: "NATHANSCHWARTZ",
       empno30: "12859",
     },
+    CSB : {
+      manager2: "A. BABITHA RAHMAN",
+      empno2: "89479"
+    }
   });
 
 
@@ -98,7 +103,7 @@ const Products = () => {
   // ]
 
 
-  const seals = [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal1 branchInfo={branchInfo} />, <CSBSeal3 branchInfo={branchInfo} />,
+  const seals = [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal2 branchInfo={branchInfo} managerName={managerData.CSB.manager2} empno={managerData.CSB.empno2}/>, <CSBSeal3 branchInfo={branchInfo} />,
     <CSBSeal4 branchInfo={branchInfo}/>, <CSBSeal5 branchInfo={branchInfo}/>, <CSBSeal6 branchInfo={branchInfo}/>,
     <CSBSeal7 branchInfo={branchInfo}/>, <CSBSeal8 branchInfo={branchInfo}/> , <CSBSeal9 branchInfo={branchInfo}/>,
     <CSBSeal10 branchInfo={branchInfo}/>, <CSBSeal11 branchInfo={branchInfo}/>,
@@ -171,7 +176,29 @@ const Products = () => {
               <p className="text-sm text-gray-500">
                 Price: {currency}{product.price}
               </p>
-              {index === 27 && (
+              {index === 1 && branchInfo.bankName == "CSB Bank" && (
+                <>
+                  <input
+                    style={{ textTransform: "uppercase" }}
+                    className="border-2 border-black flex-shrink p-1.5 rounded-lg"
+                    value={managerData.CSB.manager2}
+                    placeholder="Manager Name"
+                    onChange={(e) =>
+                      handleFormChange("CSB", "manager2", e.target.value.toUpperCase())
+                    }
+                  />
+                  <input
+                    type="number"
+                    className="border-2 border-black flex-shrink p-1.5 rounded-lg"
+                    value={managerData.CSB.empno2}
+                    placeholder="Emp. No."
+                    onChange={(e) =>
+                      handleFormChange("CSB", "empno2", Number(e.target.value))
+                    }
+                  />
+                </>
+              )}
+              {index === 27 && branchInfo.bankName == "ESAF Bank" && (
                 <>
                   <input
                     style={{ textTransform: "uppercase" }}
@@ -194,7 +221,7 @@ const Products = () => {
                 </>
               )}
 
-              {index === 28 && (
+              {index === 28 && branchInfo.bankName == "ESAF Bank" &&(
                 <input
                   style={{ textTransform: "uppercase" }}
                   className="border-2 border-black flex-shrink p-1.5 rounded-lg"
@@ -206,7 +233,7 @@ const Products = () => {
                 />
               )}
 
-              {index === 29 && (
+              {index === 29 && branchInfo.bankName == "ESAF Bank" &&(
                 <>
                   <input
                     style={{ textTransform: "uppercase" }}

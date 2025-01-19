@@ -1,0 +1,25 @@
+.seal2-stamp {
+  /* width: 35mm; */
+  height: 28mm;
+  font-family: Arial;
+  font-size: 8.5pt;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.seal2-stamp img{
+  margin-right: 9px;
+  height: 5mm;
+  width: 6mm;
+  margin-top: 5px;
+  padding-right: 2px;
+  align-self: flex-end;
+}
+
+.seal2-managerName{
+  text-align: center;
+}
+
+.seal2-empno{
+  text-align: center;
+}
