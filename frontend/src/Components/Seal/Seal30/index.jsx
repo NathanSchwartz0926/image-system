@@ -6,11 +6,11 @@ const Seal30 = ({ branchName, managerName, empno }) => {
   }, []);
 
   return (
-    <div className="stamp-container">
-      <p className="text name">{managerName}</p>
-      <p className="text designation">Manager</p>
-      <p className="text emp-no">Emp. No. {empno}</p>
-      <p className="text branch">{branchName} Branch</p>
+    <div className="seal30-stamp-container">
+      <p className="seal30-text seal30-name">{managerName}</p>
+      <p className="seal30-text seal30-designation">Manager</p>
+      <p className="seal30-text seal30-emp-no">Emp. No. {empno}</p>
+      <p className="seal30-text seal30-branch">{branchName} Branch</p>
     </div>
   );
 };

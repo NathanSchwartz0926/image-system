@@ -1,13 +1,4 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: white;
-}
-
-.stamp-container {
+.seal30-stamp-container {
     /* width: 44mm; */
     /* height: 17mm; */
     border: 1px solid black;
@@ -18,23 +9,23 @@ body {
     position: relative;
 }
 
-.text {
+.seal30-text {
     font-family: Arial, sans-serif;
     text-align: center;
     margin : 0;
     font-weight: bold;
 }
 
-.name {
+.seal30-name {
     font-size: 12pt;
     font-weight: bolder;
 }
 
-.designation, .emp-no, .branch {
+.seal30-designation, .seal30-emp-no, .seal30-branch {
     font-size: 9pt;
 }
 
-.size-label {
+.seal30-size-label {
     font-size: 8pt;
     color: red;
     position: absolute;
