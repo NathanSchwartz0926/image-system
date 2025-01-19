@@ -19,20 +19,20 @@ const Seal7 = ({ branchInfo }) => {
   }
 
   return (
-    <div className="seal7-stamp-container">
-      <div className="seal7-text">
+    <div className="CSB-seal7-stamp-container">
+      <div className="CSB-seal7-text">
         <p>Without risk and responsibility on the Bank or any its officials. Customer Signature verified as per our records.</p>
       </div>
-      <div className="seal7-bank-name">
+      <div className="CSB-seal7-bank-name">
         <img src={csblogo} alt="Logo" style={{marginTop: "5px"}} />
         <div className="flex flex-col" style={{ alignItems: 'center', width: "100%" }}>
           <p>CSB BANK LTD.,</p>
-          <div className="seal7-branch-info">
+          <div className="CSB-seal7-branch-info">
             {branchName} Branch, {districtName}
           </div>
         </div>
       </div>
-      <div className="seal7-authorized">
+      <div className="CSB-seal7-authorized">
         Authorised Signatory
       </div>
     </div>

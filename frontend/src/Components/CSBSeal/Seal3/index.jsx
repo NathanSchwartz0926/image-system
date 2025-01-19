@@ -23,21 +23,21 @@ const Seal3 = ({ branchInfo }) => {
   let result = date.toLocaleDateString('en-GB', options).toUpperCase();
 
   return (
-    <div className="seal3-stamp">
-      <div className="seal3-header">
+    <div className="CSB-seal3-stamp">
+      <div className="CSB-seal3-header">
         <img src={csblogo} alt="Bank Logo" />
-        <div className="seal3-text" style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
-          <p className="seal3-title">CSB Bank LTD.,</p>
-          <p className="seal3-branch">{branchName} Branch, {districtName}</p>
+        <div className="CSB-seal3-text" style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+          <p className="CSB-seal3-title">CSB Bank LTD.,</p>
+          <p className="CSB-seal3-branch">{branchName} Branch, {districtName}</p>
         </div>
       </div>
-      <div className="seal3-date-box">
-        <p className="seal3-date" id="current-date">{result}</p>
+      <div className="CSB-seal3-date-box">
+        <p className="CSB-seal3-date" id="current-date">{result}</p>
       </div>
-      <div className="seal3-footer">
-        <p className="seal3-received">RECEIVED</p>
+      <div className="CSB-seal3-footer">
+        <p className="CSB-seal3-received">RECEIVED</p>
       </div>
-      <div className="seal3-extra-lines">
+      <div className="CSB-seal3-extra-lines">
         <p>Time of Receipt: ..............................................</p>
         <p>Emp. Sign & ID: ...............................................</p>
       </div>

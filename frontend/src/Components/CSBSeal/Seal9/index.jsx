@@ -8,8 +8,8 @@ const Seal9 = ({ branchInfo }) => {
 
 
   return (
-    <div className="seal9-stamp-container">
-      <div className="seal9-stamp-box" style = {{letterSpacing:"-0.6px"}}>
+    <div className="CSB-seal9-stamp-container">
+      <div className="CSB-seal9-stamp-box" style = {{letterSpacing:"-0.6px"}}>
         <div style = {{display:"flex"}}>
           <p>Duplicate DD No: </p>
           <div style = {{flexGrow: "1", border: "None", borderBottom: "2.5px dotted black"}}></div>

@@ -1,8 +1,8 @@
-.seal4-stamp {
+.CSB-seal4-stamp {
   text-align: center;
 }
 
-.seal4-box {
+.CSB-seal4-box {
   width: 30mm;
   height: 15mm;
   border: 2px solid black;
@@ -14,19 +14,19 @@
   box-sizing: border-box;
 }
 
-.seal4-box .seal4-title {
+.CSB-seal4-box .CSB-seal4-title {
   font-size: 11pt;
   font-weight: bold;
   margin: 0;
 }
 
-.seal4-box .seal4-line {
+.CSB-seal4-box .CSB-seal4-line {
   width: 80%;
   height: 1px;
   border-bottom: 1px solid black;
 }
 
-.seal4-details {
+.CSB-seal4-details {
   margin-top: 10px;
   font-size: 10pt;
   color: red;

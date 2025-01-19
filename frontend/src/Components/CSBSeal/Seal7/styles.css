@@ -1,5 +1,5 @@
 
-.seal7-stamp-container {
+.CSB-seal7-stamp-container {
     width: 48mm;
     /* height: 29mm; */
     border: 1.5pt solid black;
@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.seal7-text p {
+.CSB-seal7-text p {
     font-family: 'swis721 cn bt', sans-serif;
     font-size: 8.5pt;
     font-weight: bold;
@@ -23,7 +23,7 @@
     line-height: 12px;
 }
 
-.seal7-bank-name {
+.CSB-seal7-bank-name {
     font-family: Arial, sans-serif;
     font-size: 12.186pt;
     font-weight: bold;
@@ -33,13 +33,13 @@
     margin-bottom: -2px;
 }
 
-.seal7-bank-name img {
+.CSB-seal7-bank-name img {
     width: 16px;
     height: 16px;
     margin-right: 5px;
 }
 
-.seal7-branch-info {
+.CSB-seal7-branch-info {
     font-family: 'swis721 cn bt', sans-serif;
     font-size: 9pt;
     font-weight: bold;
@@ -47,14 +47,14 @@
     margin-bottom: 20px;
 }
 
-.seal7-authorized {
+.CSB-seal7-authorized {
     font-family: 'swis721 cn bt', sans-serif;
     font-size: 9pt;
     font-weight: bold;
     text-align: right;
 }
 
-.seal7-footer {
+.CSB-seal7-footer {
     text-align: center;
     font-size: 9px;
     margin-top: 10px;

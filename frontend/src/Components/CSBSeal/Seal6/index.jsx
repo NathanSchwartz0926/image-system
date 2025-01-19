@@ -8,10 +8,10 @@ const Seal6 = ({ branchInfo }) => {
 
 
   return (
-    <div className="seal6-container">
-      <div className="seal6-rect-stamp">
-        <div className="seal6-top-text">Signature Verified</div>
-        <div className="seal6-bottom-text">Sign and Emp ID.</div>
+    <div className="CSB-seal6-container">
+      <div className="CSB-seal6-rect-stamp">
+        <div className="CSB-seal6-top-text">Signature Verified</div>
+        <div className="CSB-seal6-bottom-text">Sign and Emp ID.</div>
       </div>
     </div>
   );

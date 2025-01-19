@@ -1,4 +1,4 @@
-.seal2-stamp {
+.CSB-seal2-stamp {
   /* width: 35mm; */
   height: 28mm;
   font-family: Arial;
@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: column;
 }
-.seal2-stamp img{
+
+.CSB-seal2-stamp img {
   margin-right: 9px;
   height: 5mm;
   width: 6mm;
@@ -16,10 +17,10 @@
   align-self: flex-end;
 }
 
-.seal2-managerName{
+.CSB-seal2-managerName {
   text-align: center;
 }
 
-.seal2-empno{
+.CSB-seal2-empno {
   text-align: center;
 }

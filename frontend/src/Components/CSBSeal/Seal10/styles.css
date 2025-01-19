@@ -1,4 +1,4 @@
-.seal10-stamp {
+.CSB-seal10-stamp {
   width: 54mm;
   height: 33mm;
   border: 3px solid black;
@@ -13,24 +13,24 @@
   line-height: 16px;
 }
 
-.seal10-stamp .seal10-header {
+.CSB-seal10-stamp .CSB-seal10-header {
   display: flex;
   width: 100%;
   margin-left: 3px;
 }
 
-.seal10-stamp .seal10-header img {
+.CSB-seal10-stamp .CSB-seal10-header img {
   width: 5mm;
   height: 5mm;
   margin-right: 5px;
   margin-top: 3px;
 }
 
-.seal10-stamp .seal10-header .seal10-text {
+.CSB-seal10-stamp .CSB-seal10-header .CSB-seal10-text {
   text-align: left;
 }
 
-.seal10-stamp .seal10-header .seal10-text .seal10-title {
+.CSB-seal10-stamp .CSB-seal10-header .CSB-seal10-text .CSB-seal10-title {
   font-family: Arial;
   font-size: 14.543pt;
   font-weight: bold;
@@ -39,14 +39,14 @@
   text-align: center;
 }
 
-.seal10-stamp .seal10-header .seal10-text .seal10-branch {
+.CSB-seal10-stamp .CSB-seal10-header .CSB-seal10-text .CSB-seal10-branch {
   font-family: Arial, sans-serif;
   font-size: 8.8pt;
   font-weight: bold;
   margin: 0;
 }
 
-.seal10-stamp .seal10-date-box {
+.CSB-seal10-stamp .CSB-seal10-date-box {
   width: 25mm;
   height: 10mm;
   border: 1px solid black;
@@ -56,38 +56,38 @@
   margin-bottom: 3px;
 }
 
-.seal10-stamp .seal10-date-box .seal10-date {
+.CSB-seal10-stamp .CSB-seal10-date-box .CSB-seal10-date {
   font-family: 'Swis721 Cn BT', sans-serif;
   font-size: 12pt;
   color: red;
 }
 
-.seal10-stamp .seal10-footer {
+.CSB-seal10-stamp .CSB-seal10-footer {
   text-align: center;
 }
 
-.seal10-stamp .seal10-footer .received {
+.CSB-seal10-stamp .CSB-seal10-footer .received {
   font-family: Arial, sans-serif;
   font-size: 13.404pt;
   font-weight: bold;
   margin: 0;
 }
 
-.seal10-stamp .details {
+.CSB-seal10-stamp .details {
   margin-top: 20px;
   font-size: 12px;
   text-align: center;
   color: red;
 }
 
-.seal10-stamp .seal10-extra-lines {
+.CSB-seal10-stamp .CSB-seal10-extra-lines {
   width: 100%;
   text-align: center;
   font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
-.seal10-stamp .seal10-extra-lines p {
+.CSB-seal10-stamp .CSB-seal10-extra-lines p {
   margin: 0;
   font-size: 12pt;
 }

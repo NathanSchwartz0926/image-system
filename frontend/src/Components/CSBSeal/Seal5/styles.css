@@ -1,4 +1,4 @@
- .seal5-circle-stamp {
+ .CSB-seal5-circle-stamp {
      width: 15mm;
      height: 10mm;
      border: 2pt solid black;
@@ -10,13 +10,13 @@
      margin-bottom: 20px;
  }
 
- .seal5-circle-stamp span {
+ .CSB-seal5-circle-stamp span {
      font-size: 8.172pt;
      font-weight: bold;
      line-height: 1.2;
  }
 
- .seal5-container {
+ .CSB-seal5-container {
      width: 40mm;
      display: flex;
      justify-content: center;
@@ -24,7 +24,7 @@
      flex-direction: column;
  }
 
- .seal5-details {
+ .CSB-seal5-details {
      text-align: center;
      color: red;
  }

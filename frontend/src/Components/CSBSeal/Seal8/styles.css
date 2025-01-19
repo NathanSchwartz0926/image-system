@@ -1,59 +1,59 @@
-.seal8-stamp {
+.CSB-seal8-stamp {
     width: 70mm;
-    height: 36mm;
+    /* height: 36mm; */
     border: 1.5pt solid black;
     padding-left: 5px;
     box-sizing: border-box;
     line-height: 12px;
 }
 
-.seal8-stamp .seal8-logo {
+.CSB-seal8-stamp .CSB-seal8-logo {
     display: flex;
     align-items: center;
 }
 
-.seal8-stamp .seal8-logo img {
+.CSB-seal8-stamp .CSB-seal8-logo img {
     width: 15px;
     height: 15px;
     margin-right: 5px;
     margin-left: 10px;
 }
 
-.seal8-stamp .seal8-logo .seal8-bank-name {
+.CSB-seal8-stamp .CSB-seal8-logo .CSB-seal8-bank-name {
     font-size: 11pt;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.seal8-stamp .seal8-branch-name {
-    font-size: 8pt;
+.CSB-seal8-stamp .CSB-seal8-branch-name {
+    font-size: 9.5pt;
     font-family: 'Swis721 Cn BT';
     font-weight: bold;
     text-transform: capitalize;
     margin-right: 10px;
 }
 
-.seal8-stamp .seal8-title {
+.CSB-seal8-stamp .CSB-seal8-title {
     font-size: 10pt;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.seal8-stamp .seal8-details {
-    margin-top: -3px;
+.CSB-seal8-stamp .CSB-seal8-details {
+    /* margin-top: -3px; */
     font-size: 6.8pt;
     font-family: 'Swis721 Cn BT';
     font-weight: bold;
     text-align: left;
 }
 
-.seal8-stamp .seal8-details .seal8-signature {
+.CSB-seal8-stamp .CSB-seal8-details .CSB-seal8-signature {
     font-family: Arial, sans-serif;
     font-weight: bold;
 }
 
-.seal8-footer {
+.CSB-seal8-footer {
     font-size: 9px;
     margin-top: 10px;
     color: red;

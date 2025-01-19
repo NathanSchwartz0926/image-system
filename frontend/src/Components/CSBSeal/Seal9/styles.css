@@ -1,9 +1,9 @@
-.seal9-stamp-container {
+.CSB-seal9-stamp-container {
   padding: 20px;
   text-align: left;
 }
 
-.seal9-stamp-box {
+.CSB-seal9-stamp-box {
   border: 2px solid black;
   padding: 4px;
   width: 72mm;
@@ -12,14 +12,14 @@
   align-items: end;
 }
 
-.seal9-one {
+.CSB-seal9-one {
   margin: 0;
   font-size: 9pt;
   font-weight: 900;
 
 }
 
-.seal9-stamp-box p {
+.CSB-seal9-stamp-box p {
   margin: 0;
   font-size: 9pt;
   font-weight: 900;

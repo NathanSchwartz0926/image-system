@@ -8,8 +8,8 @@ const Seal5 = ({ branchInfo }) => {
 
 
   return (
-    <div className="seal5-container">
-      <div className="seal5-circle-stamp">
+    <div className="CSB-seal5-container">
+      <div className="CSB-seal5-circle-stamp">
         <span>UV/TV<br />Checked</span>
       </div>
     </div>

@@ -7,10 +7,10 @@ const Seal4 = ({ branchInfo }) => {
   }, []);
   
   return (
-    <div className="seal4-stamp">
-      <div className="seal4-box">
-        <p className="seal4-title">SS No.</p>
-        <div className="seal4-line"></div>
+    <div className="CSB-seal4-stamp">
+      <div className="CSB-seal4-box">
+        <p className="CSB-seal4-title">SS No.</p>
+        <div className="CSB-seal4-line"></div>
       </div>
     </div>
   );

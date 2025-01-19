@@ -19,18 +19,18 @@ const Seal8 = ({ branchInfo }) => {
   }
 
   return (
-    <div className="seal8-stamp">
-      <div className="seal8-logo">
+    <div className="CSB-seal8-stamp">
+      <div className="CSB-seal8-logo">
         <img src={csblogo} alt="Bank Logo" />
-        <div style={{ display: "flex", width: "100%" }}>
-          <div className="seal8-bank-name" style={{ lineHeight: "normal", flexGrow: "1", textAlign: "justify" }}>
+        <div style={{ display: "flex", width: "100%", alignItems: "flex-end" }}>
+          <div className="CSB-seal8-bank-name" style={{ lineHeight: "normal", flexGrow: "1", textAlign: "justify" }}>
             CSB BANK LTD.,
           </div>
-          <div className="seal8-branch-name">{branchName} Br.</div>
+          <div className="CSB-seal8-branch-name">{branchName} Br.</div>
         </div>
       </div>
-      <div className="seal8-title">Account Closed</div>
-      <div className="seal8-details">
+      <div className="CSB-seal8-title">Account Closed</div>
+      <div className="CSB-seal8-details">
         Date & Time of Request Received from customer<br />
         Request Accepted by: Name.........................Emp Id :.........................<br />
         Date & Time of Execution in system....................................................<br />
@@ -38,7 +38,7 @@ const Seal8 = ({ branchInfo }) => {
         Unused Chq book destroyed: Y/N Cheque Nos.:..................................<br />
         Unused Debit Card destroyed: Y / N<br />
         Closure Payment Details:....................................................................<br />
-        <span className="seal8-signature">
+        <span className="CSB-seal8-signature">
           Sign, Name, Emp ID of the BM MCSOP with date<br />
           ..................................................................................................
         </span>

@@ -23,19 +23,19 @@ const Seal10 = ({ branchInfo }) => {
   let result = date.toLocaleDateString('en-GB', options).toUpperCase();
 
   return (
-    <div className="seal10-stamp">
-      <div className="seal10-header">
+    <div className="CSB-seal10-stamp">
+      <div className="CSB-seal10-header">
         <img src={csblogo} alt="Bank Logo"/>
-        <div className="seal10-text" style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
-          <p className="seal10-title">CSB Bank Ltd.,</p>
-          <p className="seal10-branch">{branchName} Branch, {districtName}</p>
+        <div className="CSB-seal10-text" style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+          <p className="CSB-seal10-title">CSB Bank Ltd.,</p>
+          <p className="CSB-seal10-branch">{branchName} Branch, {districtName}</p>
         </div>
       </div>
-      <div className="seal10-date-box">
-        <p className="seal10-date" id="current-date">{result}</p>
+      <div className="CSB-seal10-date-box">
+        <p className="CSB-seal10-date" id="current-date">{result}</p>
       </div>
 
-      <div className="seal10-extra-lines">
+      <div className="CSB-seal10-extra-lines">
         <p>TOO LATE FOR TODAY'S PROCESSING</p>
       </div>
     </div>

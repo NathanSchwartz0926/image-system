@@ -15,18 +15,18 @@ const Seal11 = ({ branchInfo }) => {
   let branchName = branchInfo?.branchName || ""; // Optional chaining for safety
 
   return (
-    <div className="seal11-stamp">
-      <div className="seal11-branch">
-        <img src={csblogo} alt="CSB Bank Logo" className="seal11-logo" />
+    <div className="CSB-seal11-stamp">
+      <div className="CSB-seal11-branch">
+        <img src={csblogo} alt="CSB Bank Logo" className="CSB-seal11-logo" />
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%", lineHeight: "20px" }}>
-          <div className="seal11-bankName" style={{ marginBottom: "-3px" }}>CSB BANK LTD.,</div>
-          <div className="seal11-branchName">{branchName} Branch, {districtName}</div>
+          <div className="CSB-seal11-bankName" style={{ marginBottom: "-3px" }}>CSB BANK LTD.,</div>
+          <div className="CSB-seal11-branchName">{branchName} Branch, {districtName}</div>
         </div>
       </div>
-      <div className="seal11-stop-payment">
+      <div className="CSB-seal11-stop-payment">
         STOP PAYMENT
       </div>
-      <div className="seal11-details">
+      <div className="CSB-seal11-details">
         Date & Time of Receipt From Customer : <br />
         Request Accepted By (Emp ID) : <br />
         Date & Time of Execution in System : <br />
