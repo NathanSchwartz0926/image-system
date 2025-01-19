@@ -89,27 +89,34 @@ const Products = () => {
     }));
   };
 
-  // const seals = [
-  //   <Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
-  //   <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
-  //   <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
-  //   <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
-  //   <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
-  //   <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />, <Seal24 branchName={branchName} />,
-  //   <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />,
-  //   <Seal28 branchName={branchName} managerName={managerData.ESAF.manager28} empno={managerData.ESAF.empno28} />,
-  //   <Seal29 branchName={branchName} managerName={managerData.ESAF.manager29} />,
-  //   <Seal30 branchName={branchName} managerName={managerData.ESAF.manager30} empno={managerData.ESAF.empno30} />
-  // ]
+  const getSealList = (branchInfo) => {
+    
+    switch(branchInfo.bankName) {
+      case "ESAF Bank":
+        return [
+          <Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
+          <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
+          <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
+          <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
+          <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
+          <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />, <Seal24 branchName={branchName} />,
+          <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />,
+          <Seal28 branchName={branchName} managerName={managerData.ESAF.manager28} empno={managerData.ESAF.empno28} />,
+          <Seal29 branchName={branchName} managerName={managerData.ESAF.manager29} />,
+          <Seal30 branchName={branchName} managerName={managerData.ESAF.manager30} empno={managerData.ESAF.empno30} />
+        ];
+      case "CSB Bank":
+        return [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal2 branchInfo={branchInfo} managerName={managerData.CSB.manager2} empno={managerData.CSB.empno2}/>, <CSBSeal3 branchInfo={branchInfo} />,
+          <CSBSeal4 branchInfo={branchInfo}/>, <CSBSeal5 branchInfo={branchInfo}/>, <CSBSeal6 branchInfo={branchInfo}/>,
+          <CSBSeal7 branchInfo={branchInfo}/>, <CSBSeal8 branchInfo={branchInfo}/> , <CSBSeal9 branchInfo={branchInfo}/>,
+          <CSBSeal10 branchInfo={branchInfo}/>, <CSBSeal11 branchInfo={branchInfo}/>,
+        ];
+      default:
+        return [];
+    }
+  }
 
-
-  const seals = [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal2 branchInfo={branchInfo} managerName={managerData.CSB.manager2} empno={managerData.CSB.empno2}/>, <CSBSeal3 branchInfo={branchInfo} />,
-    <CSBSeal4 branchInfo={branchInfo}/>, <CSBSeal5 branchInfo={branchInfo}/>, <CSBSeal6 branchInfo={branchInfo}/>,
-    <CSBSeal7 branchInfo={branchInfo}/>, <CSBSeal8 branchInfo={branchInfo}/> , <CSBSeal9 branchInfo={branchInfo}/>,
-    <CSBSeal10 branchInfo={branchInfo}/>, <CSBSeal11 branchInfo={branchInfo}/>,
-  ]
-
-
+  const seals = getSealList(branchInfo)
 
   /*useEffect(() => {
     const fetchImages = async () => {
