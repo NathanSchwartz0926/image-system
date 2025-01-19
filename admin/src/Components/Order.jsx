@@ -241,7 +241,37 @@ const Order = () => {
     printWindow.print();
   };
 
-  const detailTextPerSeal = (index, qty) => {
+  const detailTextPerSeal = (bankName, index, qty, price) => {
+    switch (bankName) {
+      case "ESAF Bank":
+        return esafDetailTextPerSeal(index, qty);
+      case "CSB Bank":
+        return csbDetailTextPerSeal(index, qty, price);
+      default:
+        return ""
+    }
+  }
+
+  const csbDetailTextPerSeal = (index, qty, price) => {
+    if (qty == 1)
+      switch (index) {
+        case 2:
+        case 9:
+          return `     Rubber Stamp with Date\n            (Polimer Stamp)\n                  RS.${price}/-`
+        default:
+          return `              Rubber Stamp\n            (Polimer  Stamp)\n                    RS.${price}/-`
+      }
+    else
+      switch (index) {
+        case 2:
+        case 9:
+          return ` Rubber Stamp with Date × ${qty}\n            (Polimer Stamp)\n                  RS.${price}/-`
+        default:
+          return `          Rubber Stamp × ${qty}\n            (Polimer  Stamp)\n                    RS.${price}/-`
+      }
+  }
+
+  const esafDetailTextPerSeal = (index, qty) => {
     if (qty == 1)
       switch (index) {
         case 4:
@@ -380,7 +410,7 @@ const Order = () => {
             const yPosition = cellY + (cellHeight - drawHeight) / 2; // Center vertically
 
             await doc.addImage(src, "PNG", xPosition, yPosition, drawWidth, drawHeight);
-            doc.text(detailTextPerSeal(i, selectedProducts[i].qty), cellX, cellY + cellHeight + 1)
+            doc.text(detailTextPerSeal(order.bankName, i, selectedProducts[i].qty, selectedProducts[i].price), cellX, cellY + cellHeight + 1)
             resolve();
           };
         });
