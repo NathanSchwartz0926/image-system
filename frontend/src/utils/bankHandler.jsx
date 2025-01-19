@@ -1,8 +1,3 @@
-
-const getSeals = (bankName) => {
-  
-}
-
 const getProducts = (bankName) => {
   switch (bankName) {
     case "ESAF Bank":
@@ -57,4 +52,4 @@ const getProducts = (bankName) => {
   }
 }
 
-export { getSeals, getProducts};
+export {  getProducts};
