@@ -1,0 +1,91 @@
+.seal3-stamp {
+  /* width: 54mm;
+  height: 33mm; */
+  border: 3px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: black;
+  padding: 3px;
+}
+
+.seal3-stamp .seal3-header {
+  display: flex;
+  width: 100%;
+  margin-left: 3px;
+}
+
+.seal3-stamp .seal3-header img {
+  width: 5mm;
+  height: 5mm;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.seal3-stamp .seal3-header .seal3-text {
+  text-align: left;
+}
+
+.seal3-stamp .seal3-header .seal3-text .seal3-title {
+  font-family: Arial;
+  font-size: 14.543pt;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.seal3-stamp .seal3-header .seal3-text .seal3-branch {
+  font-family: Arial, sans-serif;
+  font-size: 8.9pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.seal3-stamp .seal3-date-box {
+  width: 25mm;
+  height: 9mm;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seal3-stamp .seal3-date-box .seal3-date {
+  font-family: 'Swis721 Cn BT', sans-serif;
+  font-size: 12pt;
+  color: red;
+}
+
+.seal3-stamp .seal3-footer {
+  text-align: center;
+}
+
+.seal3-stamp .seal3-footer .seal3-received {
+  font-family: Arial, sans-serif;
+  font-size: 13.404pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.seal3-details {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: red;
+}
+
+.seal3-stamp .seal3-extra-lines {
+  width: 100%;
+  text-align: left;
+  font-size: 6.5pt;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.seal3-stamp .seal3-extra-lines p {
+  margin: 0;
+  line-height: 1.5;
+}

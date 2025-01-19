@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+}
+
+.seal7-stamp-container {
+    width: 48mm;
+    /* height: 29mm; */
+    border: 1.5pt solid black;
+    box-sizing: border-box;
+    padding-left: 2px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2px;
+    position: relative;
+}
+
+.seal7-text p {
+    font-family: 'swis721 cn bt', sans-serif;
+    font-size: 8.5pt;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 12px;
+}
+
+.seal7-bank-name {
+    font-family: Arial, sans-serif;
+    font-size: 12.186pt;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    /* align-items: center; */
+    margin-bottom: -2px;
+}
+
+.seal7-bank-name img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.seal7-branch-info {
+    font-family: 'swis721 cn bt', sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.seal7-authorized {
+    font-family: 'swis721 cn bt', sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-align: right;
+}
+
+.seal7-footer {
+    text-align: center;
+    font-size: 9px;
+    margin-top: 10px;
+    color: red;
+}

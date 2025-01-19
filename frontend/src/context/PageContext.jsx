@@ -33,6 +33,8 @@ const PageContextProvider = (props) => {
     })
     const [branchInfo, setBranchInfo] = useState({})
 
+   
+
     const getBranchInfo = async () => {
         try {
             const branchName = localStorage.getItem("branchName");
@@ -134,7 +136,7 @@ const PageContextProvider = (props) => {
 
 
     const products = getProducts(branchInfo.bankName)
-    console.log(products)
+    
 
 
     // useEffect(()=>{

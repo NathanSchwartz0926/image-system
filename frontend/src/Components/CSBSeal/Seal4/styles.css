@@ -1,0 +1,33 @@
+.seal4-stamp {
+  text-align: center;
+}
+
+.seal4-box {
+  width: 30mm;
+  height: 15mm;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.seal4-box .seal4-title {
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.seal4-box .seal4-line {
+  width: 80%;
+  height: 1px;
+  border-bottom: 1px solid black;
+}
+
+.seal4-details {
+  margin-top: 10px;
+  font-size: 10pt;
+  color: red;
+}

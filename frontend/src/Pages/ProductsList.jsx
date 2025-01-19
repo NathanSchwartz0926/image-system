@@ -31,8 +31,19 @@ import Seal28 from '../Components/Seal/Seal28';
 import Seal29 from '../Components/Seal/Seal29';
 import Seal30 from '../Components/Seal/Seal30';
 
+import CSBSeal1 from '../Components/CSBSeal/Seal1';
+import CSBSeal3 from '../Components/CSBSeal/Seal3';
+import CSBSeal4 from '../Components/CSBSeal/Seal4';
+import CSBSeal5 from '../Components/CSBSeal/Seal5';
+import CSBSeal6 from '../Components/CSBSeal/Seal6';
+import CSBSeal7 from '../Components/CSBSeal/Seal7';
+import CSBSeal8 from '../Components/CSBSeal/Seal8';
+import CSBSeal9 from '../Components/CSBSeal/Seal9';
+import CSBSeal10 from '../Components/CSBSeal/Seal10';
+import CSBSeal11 from '../Components/CSBSeal/Seal11';
+
 const Products = () => {
-  const { products, currency, addToCart, } = useContext(PageContext);
+  const { products, currency, addToCart, branchInfo, getBranchInfo } = useContext(PageContext);
 
   const [qty, setQty] = useState({});
 
@@ -42,6 +53,11 @@ const Products = () => {
       [name]: value,
     }));
   };
+  ;
+
+  useEffect(() => {
+    getBranchInfo();
+  }, [])
 
   const [images, setImages] = useState({});
   const backendUrl = import.meta.env.VITE_BACKEND_URL
@@ -67,21 +83,27 @@ const Products = () => {
       },
     }));
   };
-  
+
+  // const seals = [
+  //   <Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
+  //   <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
+  //   <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
+  //   <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
+  //   <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
+  //   <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />, <Seal24 branchName={branchName} />,
+  //   <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />,
+  //   <Seal28 branchName={branchName} managerName={managerData.ESAF.manager28} empno={managerData.ESAF.empno28} />,
+  //   <Seal29 branchName={branchName} managerName={managerData.ESAF.manager29} />,
+  //   <Seal30 branchName={branchName} managerName={managerData.ESAF.manager30} empno={managerData.ESAF.empno30} />
+  // ]
 
 
-  const seals = [
-    <Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
-    <Seal5 branchName={branchName} />, <Seal6 branchName={branchName} />, <Seal7 branchName={branchName} />, <Seal8 branchName={branchName} />,
-    <Seal9 branchName={branchName} />, <Seal10 branchName={branchName} />, <Seal11 branchName={branchName} />, <Seal12 branchName={branchName} />,
-    <Seal13 branchName={branchName} />, <Seal14 branchName={branchName} />, <Seal15 branchName={branchName} />, <Seal16 branchName={branchName} />,
-    <Seal17 branchName={branchName} />, <Seal18 branchName={branchName} />, <Seal19 branchName={branchName} />, <Seal20 branchName={branchName} />,
-    <Seal21 branchName={branchName} />, <Seal22 branchName={branchName} />, <Seal23 branchName={branchName} />, <Seal24 branchName={branchName} />,
-    <Seal25 branchName={branchName} />, <Seal26 branchName={branchName} />, <Seal27 branchName={branchName} />,
-    <Seal28 branchName={branchName} managerName={managerData.ESAF.manager28} empno={managerData.ESAF.empno28} />,
-    <Seal29 branchName={branchName} managerName={managerData.ESAF.manager29} />,
-    <Seal30 branchName={branchName} managerName={managerData.ESAF.manager30} empno={managerData.ESAF.empno30} />
+  const seals = [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal1 branchInfo={branchInfo} />, <CSBSeal3 branchInfo={branchInfo} />,
+    <CSBSeal4 branchInfo={branchInfo}/>, <CSBSeal5 branchInfo={branchInfo}/>, <CSBSeal6 branchInfo={branchInfo}/>,
+    <CSBSeal7 branchInfo={branchInfo}/>, <CSBSeal8 branchInfo={branchInfo}/> , <CSBSeal9 branchInfo={branchInfo}/>,
+    <CSBSeal10 branchInfo={branchInfo}/>, <CSBSeal11 branchInfo={branchInfo}/>,
   ]
+
 
 
   /*useEffect(() => {
