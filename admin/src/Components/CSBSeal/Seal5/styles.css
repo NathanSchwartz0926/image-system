@@ -1,30 +1,30 @@
- .CSB-seal5-circle-stamp {
-     width: 15mm;
-     height: 10mm;
-     border: 2pt solid black;
-     border-radius: 50%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     margin-bottom: 20px;
- }
+.CSB-seal5-circle-stamp {
+    width: 17mm;
+    height: 12mm;
+    border: 2pt solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
- .CSB-seal5-circle-stamp span {
-     font-size: 8.172pt;
-     font-weight: bold;
-     line-height: 1.2;
- }
+.CSB-seal5-circle-stamp span {
+    font-size: 8.172pt;
+    font-weight: bold;
+    line-height: 1.2;
+}
 
- .CSB-seal5-container {
-     width: 40mm;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
- }
+.CSB-seal5-container {
+    width: 40mm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
- .CSB-seal5-details {
-     text-align: center;
-     color: red;
- }
+.CSB-seal5-details {
+    text-align: center;
+    color: red;
+}
