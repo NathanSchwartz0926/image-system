@@ -11,24 +11,28 @@ import Orders from './Orders'
 const Home = () => {
 
   const { navigate } = useContext(PageContext)
-
+  const path = window.location.pathname;
   return (
     <div>
       <div className=' h-screen'>
         <Navbar />
         <div className='flex justify-center mt-3'>
           <Routes>
-            <Route path = "/order" element = {<ProductsList />}/>
-            <Route path = "/orders" element = {<Orders />}/>
+            <Route path="/order" element={<ProductsList />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
-          
         </div>
-        <div className='flex justify-center'>
-          <Cart />
-        </div>
-        <div className='flex justify-center'>
-          <Sidebar />
-        </div>
+        {path == "/order" ?
+          <div>
+            <div className='flex justify-center'>
+              <Cart />
+            </div>
+            <div className='flex justify-center'>
+              <Sidebar />
+            </div>
+          </div>
+          : ""
+        }
       </div>
     </div>
   )
