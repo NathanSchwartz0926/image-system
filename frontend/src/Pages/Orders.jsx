@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
-import { PageContext } from '../Context/PageContext'
-import Navbar from '../Components/Navbar'
+import { PageContext } from '../context/PageContext'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -19,7 +18,6 @@ const Orders = () => {
   return (
     <div className='w-full flex justify-center items-center'>
         <div className='w-[90%] py-4'>
-            <Navbar title={"Orders"}/>
             <div>
                 {
                     reversedOrders.map((item, index) => {

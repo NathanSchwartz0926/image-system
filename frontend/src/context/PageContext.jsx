@@ -156,6 +156,38 @@ const PageContextProvider = (props) => {
     //     console.log(cart)
     // },[cart])
 
+    const [date, setDate] = useState("")
+    const formattingDate = () => {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1;
+        let dd = today.getDate();
+    
+        if (dd < 10) dd = '0' + dd
+        if (mm < 10) mm = '0' + mm;
+    
+        setDate(dd + '/' + mm + '/' + yyyy)
+    }
+    
+    const [orders, setOrders] = useState([]);
+    const retrieveOrder = async () => {
+        try {
+            const response = await axios.get(backendUrl+"/api/order/list")
+            if(response.data.success){
+                setOrders(response.data.orders)
+            }else{
+                console.error(response.data.message)
+            }
+        } catch (error) {
+            console.error(error.message)
+        }
+        formattingDate();
+    }
+    
+    useEffect(() => {
+        retrieveOrder();
+    }, [])
+
     const value = {
         backendUrl,
         navigate,
@@ -167,7 +199,9 @@ const PageContextProvider = (props) => {
         orderConfirm, setOrderConfirm,
         currency,
         oneBranchOrder, loadOneBranchOrder,
-        managerData, setManagerData
+        managerData, setManagerData,
+        orders, setOrders,
+        date,
     }
 
     return (

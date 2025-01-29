@@ -15,9 +15,9 @@ function App() {
                 {/* Redirect to /order if logged in, otherwise to /login */}
                 <Route path="/" element={isLoggedIn ? <Navigate to="/order" /> : <Navigate to="/login" />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/order" element={<Home />} />
+
                 {/* Catch-all route for any undefined paths */}
-                <Route path="*" element={<Navigate to={isLoggedIn ? "/order" : "/login"} />} />
+                <Route path="*" element={isLoggedIn ? <Home /> : <Login />} />
             </Routes>
         </>
     );
