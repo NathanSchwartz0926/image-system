@@ -7,6 +7,7 @@ import Cart from '../Components/Cart'
 import { Routes, Route } from "react-router-dom"
 import Orders from './Orders'
 import { useEffect } from 'react'
+import Order from '../Components/Order'
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
           <Routes>
             <Route path="/order" element={<ProductsList />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="orders/:orderId" element={<Order />} />
           </Routes>
         </div>
         {path == "/order" ?
