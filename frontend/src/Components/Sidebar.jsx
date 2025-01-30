@@ -40,7 +40,8 @@ const Sidebar = () => {
       bankLogo: branchInfo.logo,
       address: branchInfo.branchName,
       location: branchInfo.address,
-      managerData: managerData
+      managerData: managerData,
+      state: 0
     };
     console.log(newOrderData)
     setOrder((prevOrder) => ({

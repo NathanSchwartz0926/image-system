@@ -31,7 +31,8 @@ const PageContextProvider = (props) => {
         bankLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
         address: "Thiruvanmiyur",
         remark: "",
-        location: ""
+        location: "",
+        state: 0,
     })
     const [branchInfo, setBranchInfo] = useState({})
 
@@ -92,7 +93,7 @@ const PageContextProvider = (props) => {
             const response = await axios.post(backendUrl + "/api/order/oneBranch", {branchName, bankName})
             console.log(response.data)
             if (response.data.success) {
-                toast.success("Previous Order Information loaded Successfully")
+                // toast.success("Previous Order Information loaded Successfully")
                 setOneBranchOrder(response.data.orders)
             } else {
                 toast.error(response.data.message)
@@ -103,6 +104,19 @@ const PageContextProvider = (props) => {
         }
     }
 
+    const updateOrderState = async(_id) => {
+        try {
+            const response = await axios.post(backendUrl + "/api/order/stateUpdate", {_id, state:role })
+            if (response.data.success) {
+                toast.success("Order Updated Successfully")
+            } else {
+                toast.error(response.data.message)
+            }
+        } catch (error) {
+            console.error(error)
+            toast.error(error.message)
+        }
+    }
     const addToCart = (item, qty) => {
         setCart((prevCart) => {
             const existingItem = prevCart.find((cartItem) => cartItem.name === item.name);
@@ -160,6 +174,8 @@ const PageContextProvider = (props) => {
     // },[cart])
    
 
+    const [role, setRole] = useState("");
+
     const value = {
         backendUrl,
         navigate,
@@ -172,6 +188,8 @@ const PageContextProvider = (props) => {
         currency,
         oneBranchOrder, loadOneBranchOrder,
         managerData, setManagerData,
+        role, setRole,
+        updateOrderState
     }
 
     return (

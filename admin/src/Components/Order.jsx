@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import html2canvas from "html2canvas";
+import role_states from "../assets/roleStates";
 
 
 import Seal1 from '../Components/Seal/Seal1';
@@ -546,6 +547,11 @@ const Order = () => {
                   <b>Branch: {order.address}</b>
                 </p>
               </div>
+              <div className="px-2 mb-2">
+                <p className="mb-1">
+                  <b>Status : {role_states[order.state]}</b>
+                </p>
+              </div>
             </div>
             <div className="p-2 mb-3">
               <p className="text-2xl mb-1">Products</p>
@@ -658,7 +664,7 @@ const Order = () => {
             </div>
             <div className="w-full mt-2 flex justify-center">
               {selectedProducts != undefined ? (
-                selectedProducts.length != 0 ? (
+                selectedProducts.length != 0  && order.state == 3? (
                   <button
                     className="bg-green-600 uppercase rounded-3xl py-2 px-6 active:scale-90 text-white"
                     onClick={onClickAccept}

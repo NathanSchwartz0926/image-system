@@ -62,6 +62,9 @@ const orderSchema = new mongoose.Schema({
     },
     managerData : {
         type: Object
+    },
+    state : {
+        type: Number,
     }
 })
 

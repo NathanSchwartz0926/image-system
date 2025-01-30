@@ -49,7 +49,8 @@ const newOrder = async (req, res) => {
             totalAmt,
             remark : order.remark,
             location: order.location,
-            managerData: order.managerData
+            managerData: order.managerData,
+            state: order.state
         }
 
         const newOrder = new orderModel(orderData);
@@ -112,5 +113,21 @@ const bankOrder = async (req, res) => {
     }
 }
 
+const updateOrderState = async (req, res) => {
+    try {
+        const { _id, state } = req.body
+        
+        const order = await orderModel.findOne({ _id })
+        order.state = state
+        await order.save()
+        
+        res.json({success : true, message : "State Updated"})
+        
+    } catch (error) {
+        console.log(error);
+        res.json({success : false, message : error.message})
+    }
+}
 
-export { newOrder, allOrder, bankOrder, oneBranchOrder  }
+
+export { newOrder, allOrder, bankOrder, oneBranchOrder, updateOrderState  }

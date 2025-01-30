@@ -12,9 +12,17 @@ import Order from '../Components/Order'
 
 const Home = () => {
 
-  const { navigate, branchInfo, getBranchInfo } = useContext(PageContext)
+  const { navigate, branchInfo, getBranchInfo, loadOneBranchOrder } = useContext(PageContext)
   const path = window.location.pathname;
   
+  useEffect( () => {
+    getBranchInfo();
+  }, [])
+
+  useEffect(() => {
+    loadOneBranchOrder();
+  }, [branchInfo])
+
   return (
     <div>
       <div className=' h-screen'>
@@ -23,7 +31,7 @@ const Home = () => {
           <Routes>
             <Route path="/order" element={<ProductsList />} />
             <Route path="/orders" element={<Orders />} />
-            <Route path="orders/:orderId" element={<Order />} />
+            <Route path="/orders/:orderId" element={<Order />} />
           </Routes>
         </div>
         {path == "/order" ?
