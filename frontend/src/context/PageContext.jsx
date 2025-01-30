@@ -4,6 +4,7 @@ import axios from "axios"
 import { toast } from "react-toastify"
 import product_img from '../assets/products/products.js'
 import { getProducts } from "../utils/bankHandler.jsx";
+import { MdBrandingWatermark } from "react-icons/md";
 
 export const PageContext = createContext();
 
@@ -17,7 +18,7 @@ const PageContextProvider = (props) => {
     const [login, setLogin] = useState(false)
     const [orderConfirm, setOrderConfirm] = useState(false)
     const [cart, setCart] = useState([])
-    const [oneBranchOrder, setOneBranchOrder] = useState({})
+    const [oneBranchOrder, setOneBranchOrder] = useState([])
     const [order, setOrder] = useState({
         name: "",
         empNum: "",
@@ -53,18 +54,18 @@ const PageContextProvider = (props) => {
             const branchName = localStorage.getItem("branchName");
             // console.log(branchName)
             const response = await axios.post(backendUrl + "/api/bankAcc/getbankinfo", { branchName })
-            // console.log(response)
-            if (response.data.success)
+            if (response.data.success) {
                 await setBranchInfo(response.data.branchInfo)
+            }
             else {
                 console.log(response.data.message)
                 toast.error("Couldn't load branch infomation!")
             }
-
         } catch (err) {
             console.log(err)
             toast.error("Couldn't load branch information!")
         }
+
     }
 
     const newOrder = async () => {
@@ -85,7 +86,11 @@ const PageContextProvider = (props) => {
 
     const loadOneBranchOrder = async () => {
         try{
-            const response = await axios.post(backendUrl + "/api/order/oneBranch", {branchName})
+            const branchName = localStorage.getItem("branchName");
+            const bankName = branchInfo.bankName
+
+            const response = await axios.post(backendUrl + "/api/order/oneBranch", {branchName, bankName})
+            console.log(response.data)
             if (response.data.success) {
                 toast.success("Previous Order Information loaded Successfully")
                 setOneBranchOrder(response.data.orders)
@@ -149,44 +154,11 @@ const PageContextProvider = (props) => {
 
 
     const products = getProducts(branchInfo.bankName)
-    
-
 
     // useEffect(()=>{
     //     console.log(cart)
     // },[cart])
-
-    const [date, setDate] = useState("")
-    const formattingDate = () => {
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        let mm = today.getMonth() + 1;
-        let dd = today.getDate();
-    
-        if (dd < 10) dd = '0' + dd
-        if (mm < 10) mm = '0' + mm;
-    
-        setDate(dd + '/' + mm + '/' + yyyy)
-    }
-    
-    const [orders, setOrders] = useState([]);
-    const retrieveOrder = async () => {
-        try {
-            const response = await axios.get(backendUrl+"/api/order/list")
-            if(response.data.success){
-                setOrders(response.data.orders)
-            }else{
-                console.error(response.data.message)
-            }
-        } catch (error) {
-            console.error(error.message)
-        }
-        formattingDate();
-    }
-    
-    useEffect(() => {
-        retrieveOrder();
-    }, [])
+   
 
     const value = {
         backendUrl,
@@ -200,8 +172,6 @@ const PageContextProvider = (props) => {
         currency,
         oneBranchOrder, loadOneBranchOrder,
         managerData, setManagerData,
-        orders, setOrders,
-        date,
     }
 
     return (

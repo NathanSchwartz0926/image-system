@@ -85,9 +85,11 @@ const allOrder = async (req, res) => {
 
 const oneBranchOrder = async (req, res) => {
     const branchName = req.body.branchName
+    const bankName = req.body.bankName
+    // const branchName = "Kalathode"
+    // const bankName = "ESAF Bank"
     try {
-        const orders = await orderModel.find({address: branchName})
-
+        const orders = await orderModel.find({address: branchName, bankName})
         res.json({success : true, orders})
 
     } catch (error) {

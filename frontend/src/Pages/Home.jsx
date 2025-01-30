@@ -6,12 +6,14 @@ import Sidebar from '../Components/Sidebar'
 import Cart from '../Components/Cart'
 import { Routes, Route } from "react-router-dom"
 import Orders from './Orders'
+import { useEffect } from 'react'
 
 
 const Home = () => {
 
-  const { navigate } = useContext(PageContext)
+  const { navigate, branchInfo, getBranchInfo } = useContext(PageContext)
   const path = window.location.pathname;
+  
   return (
     <div>
       <div className=' h-screen'>
