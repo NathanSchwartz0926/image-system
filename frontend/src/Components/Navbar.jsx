@@ -33,7 +33,7 @@ const Navbar = () => {
       navigate('/orders')
   }
 
-  const roles = ["Employee", "Branch Head", "Procurement Head", "Head Office"]
+  const roles = ["Branch Head",  "Head Office"]
 
 
   return (
