@@ -1,36 +1,40 @@
 import mongoose from "mongoose";
 
 const bankAccSchema = new mongoose.Schema({
-    ifsc : {
-        type : String,
-        required : true,
+    ifsc: {
+        type: String,
+        required: true,
     },
     bankName: {
         type: String,
         required: true,
     },
-    password : {
-        type : String,
-        required : true
+    password: {
+        type: String,
+        required: true
     },
-    branchName : {
-        type : String,
-        required : true,
-        unique : true
+    branchName: {
+        type: String,
+        required: true,
+        unique: true
     },
-    logo : {
-        type : String,
-        required : true
+    logo: {
+        type: String,
+        required: true
     },
-    address : {
-        type : String,
-        required : true
+    address: {
+        type: String,
+        required: true
     },
-    products : {
-        type : Array,
-        required : true
+    products: {
+        type: Array,
+        required: true
+    },
+    rolepwds: {
+        type: Array,
+
     }
-}, { minimize : false })
+}, { minimize: false })
 
 const bankAccModel = mongoose.models.bankAcc || mongoose.model('bankAcc', bankAccSchema)
 
@@ -55,7 +59,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1102,
                 branchName: "Kalathode",
-                address: "V/140/(2) Jsr Square Building, Kalathode, Ollukkara (Po). Thrissur District. Pin 680655."
+                address: "V/140/(2) Jsr Square Building, Kalathode, Ollukkara (Po). Thrissur District. Pin 680655.",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -73,7 +78,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1107,
                 branchName: "Kattapana",
-                address: "11/239-D Mani'S Complex, Village Office Road, Near New Bus Stand, Kattappana- 685508"
+                address: "11/239-D Mani'S Complex, Village Office Road, Near New Bus Stand, Kattappana- 685508",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -91,7 +97,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1115,
                 branchName: "Thiruvalla",
-                address: "Xxvi 185/1 Pulimattathu Building, Ramanchira, Muthoor P.O. Thiruvalla, Pathanamthitta 689107."
+                address: "Xxvi 185/1 Pulimattathu Building, Ramanchira, Muthoor P.O. Thiruvalla, Pathanamthitta 689107.",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -109,7 +116,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1103,
                 branchName: "Edapally",
-                address: "38/211 A, Grace Tower, Near Edappally Bye Pass Junction, Edappally \u2013 Ernakulam 682024"
+                address: "38/211 A, Grace Tower, Near Edappally Bye Pass Junction, Edappally \u2013 Ernakulam 682024",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -127,7 +135,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1111,
                 branchName: "Perumbavoor",
-                address: "20/1170 A, Near Jacobite Church, Kottayam Road, Perumbavoor, Ernakulam 683542."
+                address: "20/1170 A, Near Jacobite Church, Kottayam Road, Perumbavoor, Ernakulam 683542.",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -145,7 +154,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1105,
                 branchName: "Palai",
-                address: "Melhor Building, Room No 372, A1, Near Rto Office , Chethimattom, Palai Kottayam 686575."
+                address: "Melhor Building, Room No 372, A1, Near Rto Office , Chethimattom, Palai Kottayam 686575.",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -163,7 +173,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1108,
                 branchName: "Kozhikode",
-                address: "6/140 A, G, Grand Arcade, Near Christian College, Kannur Road, Nadakkavu, Kozhikode 673011"
+                address: "6/140 A, G, Grand Arcade, Near Christian College, Kannur Road, Nadakkavu, Kozhikode 673011",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -181,7 +192,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1110,
                 branchName: "Perinthalmanna",
-                address: "14/32/6, Metro Tower, Ground Floor, Jubilee Junction, Pattambi Road, Perinthalmanna, Malappuram 679322."
+                address: "14/32/6, Metro Tower, Ground Floor, Jubilee Junction, Pattambi Road, Perinthalmanna, Malappuram 679322.",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -199,7 +211,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1109,
                 branchName: "Chandranagar",
-                address: "Room No A3/3163/15, Ground Floor , Khloe Complex, Nh, Chandra Nagar, Palakkad 678007."
+                address: "Room No A3/3163/15, Ground Floor , Khloe Complex, Nh, Chandra Nagar, Palakkad 678007.",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -217,7 +230,8 @@ const initializeDatabase = async () => {
                 ],
                 password: 1136,
                 branchName: "Kuzhalmannam II",
-                address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702"
+                address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "ESMF0001194",
@@ -235,7 +249,8 @@ const initializeDatabase = async () => {
                 ],
                 password: "0212",
                 branchName: "Araria",
-                address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702"
+                address: "Xv/381 Kannanur Junction,Kuzhalmannam-Ii,Kannadi,Palakkad 678702",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "CSBK0000339",
@@ -253,7 +268,8 @@ const initializeDatabase = async () => {
                 ],
                 password: "0111",
                 branchName: "Adoor",
-                address: "Kannamcode Road, Kannamkode, Adoor, Kerala 691523"
+                address: "Kannamcode Road, Kannamkode, Adoor, Kerala 691523",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "CSBK0000339",
@@ -271,7 +287,8 @@ const initializeDatabase = async () => {
                 ],
                 password: "001A",
                 branchName: "Alappuzha",
-                address: "Mullakkal, Alappuzha, Kerala 688001"
+                address: "Mullakkal, Alappuzha, Kerala 688001",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "CSBK0000339",
@@ -289,7 +306,8 @@ const initializeDatabase = async () => {
                 ],
                 password: "0136",
                 branchName: "Alengad",
-                address: "Kottapuram, Alangad, Kerala 683511,"
+                address: "Kottapuram, Alangad, Kerala 683511,",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "CSBK0000339",
@@ -307,7 +325,8 @@ const initializeDatabase = async () => {
                 ],
                 password: "0006",
                 branchName: "Althara",
-                address: "Punnayurkulam, Thrissur, Kerala 679561"
+                address: "Punnayurkulam, Thrissur, Kerala 679561",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
                 ifsc: "CSBK0000339",
@@ -325,15 +344,16 @@ const initializeDatabase = async () => {
                 ],
                 password: "0425",
                 branchName: "Attur",
-                address: "Attur, Thrissur, Kerala 680583"
+                address: "Attur, Thrissur, Kerala 680583",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             }
         ]
 
         // Insert sample data into the collection
         await bankAccModel.insertMany(sampleData);
-        
+
         console.log("Sample data inserted successfully");
-        
+
     } catch (error) {
         //console.error("Error initializing database:", error);
     } finally {
@@ -341,7 +361,7 @@ const initializeDatabase = async () => {
 };
 
 // Call the function to initialize the database
-initializeDatabase();  
+initializeDatabase();
 
 
 export default bankAccModel
