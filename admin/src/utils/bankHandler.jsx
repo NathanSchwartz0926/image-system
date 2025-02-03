@@ -29,27 +29,37 @@ const getProducts = (bankName) => {
         { name: "PAY HALF VALUE Prescriber Officer", price: 70, img: 24 },
         { name: "PAY HALF VALUE Receiver’s Initials ", price: 70, img: 25 },
         { name: "REJECT", price: 70, img: 26 },
-        { name: "Emp Id Name Seal", price: 70, img:27 },
+        { name: "Emp Id Name Seal", price: 70, img: 27 },
         { name: "Branch Name Name Seal", price: 70, img: 28 },
         { name: "Emp Id Branch Name Name Seal", price: 70, img: 29 },
       ];
     case "CSB Bank":
       return [
         { name: "Round Branch Seal", price: 368, img: 0 },
-        { name: "Manager Seal", price: 252, img: 1},
+        { name: "Manager Seal", price: 252, img: 1 },
         { name: "RECEIVED", price: 495, img: 2 },
         { name: "SS No", price: 298, img: 3 },
         { name: "UV/TV Checked", price: 252, img: 4 },
-        { name: "Signature Verified", price: 368, img:5 },
-        { name: "Authorised Signatory", price: 413 , img: 6},
-        { name: "Account Closed", price: 514 , img: 7},
+        { name: "Signature Verified", price: 368, img: 5 },
+        { name: "Authorised Signatory", price: 413, img: 6 },
+        { name: "Account Closed", price: 514, img: 7 },
         { name: "Duplicate DD No", price: 368, img: 8 },
         { name: "TOO LATE FOR TODAY'S PROCESSING", price: 495, img: 9 },
         { name: "STOP PAYMENT", price: 448, img: 10 },
+      ]
+    case "Federal Bank":
+      return [
+        { name: "Cash received", price: 368, img: 0 },
+        { name: "Cash paid", price: 252, img: 1 },
+        { name: "Transfer", price: 495, img: 2 },
+        { name: "CTS CLEARING", price: 298, img: 3 },
+        { name: "ACCOUNT CLOSED ON", price: 252, img: 4 },
+        { name: "Branch Head", price: 368, img: 5 },
+        { name: "Assistant Manager", price: 413, img: 6 },
       ]
     default:
       return [];
   }
 }
 
-export {  getProducts};
+export { getProducts };

@@ -1,0 +1,31 @@
+
+
+.FederalSeal6-container {
+    /* width: 82mm; */
+    /* height: 42mm; */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+.FederalSeal6-bank-title {
+    font-family: 'Diavlo', sans-serif;
+    font-weight: bold;
+    font-size: 10.5pt;
+    letter-spacing: 0.5px;
+}
+
+.FederalSeal6-branch-details {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    margin-top: 25px;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.FederalSeal6-branch-details p {
+    display: block;
+    margin:0%;
+    padding:0%;
+}

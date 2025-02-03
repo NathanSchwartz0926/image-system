@@ -52,6 +52,14 @@ import CSBSeal9 from '../Components/CSBSeal/Seal9';
 import CSBSeal10 from '../Components/CSBSeal/Seal10';
 import CSBSeal11 from '../Components/CSBSeal/Seal11';
 
+import FederalSeal1 from '../Components/FederalSeal/Seal1'
+import FederalSeal2 from '../Components/FederalSeal/Seal2'
+import FederalSeal3 from '../Components/FederalSeal/Seal3'
+import FederalSeal4 from '../Components/FederalSeal/Seal4'
+import FederalSeal5 from '../Components/FederalSeal/Seal5'
+import FederalSeal6 from '../Components/FederalSeal/Seal6'
+import FederalSeal7 from '../Components/FederalSeal/Seal7'
+
 
 const Order = () => {
   const { orderId } = useParams();
@@ -472,10 +480,10 @@ const Order = () => {
   }
 
   let branchInfo = getBranchInfo(order)
-  
+
   const getSealList = (order) => {
     let branchName = order.address;
-    switch(order.bankName) {
+    switch (order.bankName) {
       case "ESAF Bank":
         return [
           <Seal1 branchName={branchName} />, <Seal2 branchName={branchName} />, <Seal3 branchName={branchName} />, <Seal4 branchName={branchName} />,
@@ -490,10 +498,15 @@ const Order = () => {
           <Seal30 branchName={branchName} managerName={order.managerData.ESAF.manager30} empno={order.managerData.ESAF.empno30} />
         ];
       case "CSB Bank":
-        return [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal2 branchInfo={branchInfo} managerName={order.managerData.CSB.manager2} empno={order.managerData.CSB.empno2}/>, <CSBSeal3 branchInfo={branchInfo} />,
-          <CSBSeal4 branchInfo={branchInfo}/>, <CSBSeal5 branchInfo={branchInfo}/>, <CSBSeal6 branchInfo={branchInfo}/>,
-          <CSBSeal7 branchInfo={branchInfo}/>, <CSBSeal8 branchInfo={branchInfo}/> , <CSBSeal9 branchInfo={branchInfo}/>,
-          <CSBSeal10 branchInfo={branchInfo}/>, <CSBSeal11 branchInfo={branchInfo}/>,
+        return [<CSBSeal1 branchInfo={branchInfo} />, <CSBSeal2 branchInfo={branchInfo} managerName={order.managerData.CSB.manager2} empno={order.managerData.CSB.empno2} />, <CSBSeal3 branchInfo={branchInfo} />,
+        <CSBSeal4 branchInfo={branchInfo} />, <CSBSeal5 branchInfo={branchInfo} />, <CSBSeal6 branchInfo={branchInfo} />,
+        <CSBSeal7 branchInfo={branchInfo} />, <CSBSeal8 branchInfo={branchInfo} />, <CSBSeal9 branchInfo={branchInfo} />,
+        <CSBSeal10 branchInfo={branchInfo} />, <CSBSeal11 branchInfo={branchInfo} />,
+        ];
+      case "Federal Bank":
+        return [<FederalSeal1 branchInfo={branchInfo} />, <FederalSeal2 branchInfo={branchInfo} />, <FederalSeal3 branchInfo={branchInfo} />,
+        <FederalSeal4 branchInfo={branchInfo} />, <FederalSeal5 branchInfo={branchInfo} />, <FederalSeal6 branchInfo={branchInfo} />,
+        <FederalSeal7 branchInfo={branchInfo} />,
         ];
       default:
         return [];
@@ -569,8 +582,8 @@ const Order = () => {
                             transition: "transform 0.3s ease", // Smooth transition
                             transformOrigin: "center", // Zoom from center
                           }}
-                           onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
-                           onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
+                          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.5)")} // Zoom in
+                          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} // Reset zoom
                           id={"seal" + index + "component"}
                         >
                           {
@@ -664,7 +677,7 @@ const Order = () => {
             </div>
             <div className="w-full mt-2 flex justify-center">
               {selectedProducts != undefined ? (
-                selectedProducts.length != 0  && order.state == 1? (
+                selectedProducts.length != 0 && order.state == 1 ? (
                   <button
                     className="bg-green-600 uppercase rounded-3xl py-2 px-6 active:scale-90 text-white"
                     onClick={onClickAccept}

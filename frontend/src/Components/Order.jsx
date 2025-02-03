@@ -47,6 +47,14 @@ import CSBSeal9 from '../Components/CSBSeal/Seal9';
 import CSBSeal10 from '../Components/CSBSeal/Seal10';
 import CSBSeal11 from '../Components/CSBSeal/Seal11';
 
+import FederalSeal1 from '../Components/FederalSeal/Seal1'
+import FederalSeal2 from '../Components/FederalSeal/Seal2'
+import FederalSeal3 from '../Components/FederalSeal/Seal3'
+import FederalSeal4 from '../Components/FederalSeal/Seal4'
+import FederalSeal5 from '../Components/FederalSeal/Seal5'
+import FederalSeal6 from '../Components/FederalSeal/Seal6'
+import FederalSeal7 from '../Components/FederalSeal/Seal7'
+
 
 const Order = () => {
   const { orderId } = useParams();
@@ -55,7 +63,7 @@ const Order = () => {
   const [order, setOrder] = useState(false);
 
   const fetchOrder = () => {
-    
+
     const orderData = oneBranchOrder.find((item) => item._id === orderId);
     if (orderData) setOrder(orderData);
   };
@@ -82,6 +90,7 @@ const Order = () => {
 
   const getSealList = (order) => {
     let branchName = order.address;
+    console.log(branchName)
     switch (order.bankName) {
       case "ESAF Bank":
         return [
@@ -101,6 +110,11 @@ const Order = () => {
         <CSBSeal4 branchInfo={branchInfo} />, <CSBSeal5 branchInfo={branchInfo} />, <CSBSeal6 branchInfo={branchInfo} />,
         <CSBSeal7 branchInfo={branchInfo} />, <CSBSeal8 branchInfo={branchInfo} />, <CSBSeal9 branchInfo={branchInfo} />,
         <CSBSeal10 branchInfo={branchInfo} />, <CSBSeal11 branchInfo={branchInfo} />,
+        ];
+      case "Federal Bank":
+        return [<FederalSeal1 branchInfo={branchInfo} />, <FederalSeal2 branchInfo={branchInfo} />, <FederalSeal3 branchInfo={branchInfo} />,
+        <FederalSeal4 branchInfo={branchInfo} />, <FederalSeal5 branchInfo={branchInfo} />, <FederalSeal6 branchInfo={branchInfo} />,
+        <FederalSeal7 branchInfo={branchInfo} />,
         ];
       default:
         return [];
@@ -212,15 +226,15 @@ const Order = () => {
             </p>
             {
               localStorage.getItem("role") > order.state ?
-              <div style={{ display: "flex", justifyContent: "center", paddingTop: "10px" }}>
-                <button
-                  className="bg-green-600 uppercase rounded-3xl py-2 px-6 active:scale-90 text-white"
-                  onClick = {onCheckOrderClick}
-                >
-                  <b>Check Order</b>
-                </button>
-              </div>
-              :""
+                <div style={{ display: "flex", justifyContent: "center", paddingTop: "10px" }}>
+                  <button
+                    className="bg-green-600 uppercase rounded-3xl py-2 px-6 active:scale-90 text-white"
+                    onClick={onCheckOrderClick}
+                  >
+                    <b>Check Order</b>
+                  </button>
+                </div>
+                : ""
             }
           </div>
         )}
