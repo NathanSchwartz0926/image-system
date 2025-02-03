@@ -43,6 +43,17 @@ import CSBSeal9 from '../Components/CSBSeal/Seal9';
 import CSBSeal10 from '../Components/CSBSeal/Seal10';
 import CSBSeal11 from '../Components/CSBSeal/Seal11';
 
+import FederalSeal1 from '../Components/FederalSeal/Seal1'
+import FederalSeal2 from '../Components/FederalSeal/Seal2'
+import FederalSeal3 from '../Components/FederalSeal/Seal3'
+import FederalSeal4 from '../Components/FederalSeal/Seal4'
+import FederalSeal5 from '../Components/FederalSeal/Seal5'
+import FederalSeal6 from '../Components/FederalSeal/Seal6'
+import FederalSeal7 from '../Components/FederalSeal/Seal7'
+// import FederalSeal8 from '../Components/FederalSeal/Seal8'
+// import FederalSeal9 from '../Components/FederalSeal/Seal9'
+// import FederalSeal10 from '../Components/FederalSeal/Seal10'
+
 const Products = () => {
   const { products, currency, addToCart, branchInfo, getBranchInfo, managerData, setManagerData } = useContext(PageContext);
 
@@ -96,6 +107,11 @@ const Products = () => {
           <CSBSeal4 branchInfo={branchInfo}/>, <CSBSeal5 branchInfo={branchInfo}/>, <CSBSeal6 branchInfo={branchInfo}/>,
           <CSBSeal7 branchInfo={branchInfo}/>, <CSBSeal8 branchInfo={branchInfo}/> , <CSBSeal9 branchInfo={branchInfo}/>,
           <CSBSeal10 branchInfo={branchInfo}/>, <CSBSeal11 branchInfo={branchInfo}/>,
+        ];
+      case "Federal Bank":
+        return [<FederalSeal1 branchInfo={branchInfo}/>, <FederalSeal2 branchInfo ={branchInfo} />, <FederalSeal3 branchInfo = {branchInfo} />,
+          <FederalSeal4 branchInfo={branchInfo} />, <FederalSeal5 branchInfo = {branchInfo} />, <FederalSeal6 branchInfo={branchInfo} />,
+          <FederalSeal7 branchInfo={branchInfo} />,
         ];
       default:
         return [];

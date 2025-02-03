@@ -44,7 +44,7 @@ const initializeDatabase = async () => {
         // Sample data to insert
         const sampleData = [
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -63,7 +63,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -82,7 +82,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -101,7 +101,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -120,7 +120,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -139,7 +139,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -158,7 +158,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -177,7 +177,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -196,7 +196,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -215,7 +215,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -234,7 +234,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "ESMF0001194",
+                ifsc: "ESMF0000001",
                 bankName: "ESAF Bank",
                 "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8R4K8CldBXma-71sNRe7zl2stWdcMJIilQ&s",
                 products: [
@@ -253,7 +253,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "CSBK0000339",
+                ifsc: "CSBK0000001",
                 bankName: "CSB Bank",
                 "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
                 products: [
@@ -272,7 +272,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "CSBK0000339",
+                ifsc: "CSBK0000001",
                 bankName: "CSB Bank",
                 "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
                 products: [
@@ -291,7 +291,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "CSBK0000339",
+                ifsc: "CSBK0000001",
                 bankName: "CSB Bank",
                 "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
                 products: [
@@ -310,7 +310,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "CSBK0000339",
+                ifsc: "CSBK0000001",
                 bankName: "CSB Bank",
                 "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
                 products: [
@@ -329,7 +329,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             },
             {
-                ifsc: "CSBK0000339",
+                ifsc: "CSBK0000001",
                 bankName: "CSB Bank",
                 "logo": "https://companieslogo.com/img/orig/CSBBANK.NS_BIG-25254ded.png?t=1720244491",
                 products: [
@@ -345,6 +345,25 @@ const initializeDatabase = async () => {
                 password: "0425",
                 branchName: "Attur",
                 address: "Attur, Thrissur, Kerala 680583",
+                rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
+            },
+            {
+                ifsc: "FDRL0000001",
+                bankName: "Federal Bank",
+                "logo": "https://companieslogo.com/img/orig/FEDERALBNK.NS_BIG-37520d13.png?t=1720244491",
+                products: [
+                    "Dater",
+                    "Mini Dater",
+                    "Approval",
+                    "Paid",
+                    "Locker",
+                    "Number",
+                    "Fake Note",
+                    "Decline"
+                ],
+                password: "1398",
+                branchName: "Bandra",
+                address: "B-989 CASA ADRIANA, 15, ST. JOHN BAPTIST ROAD, BANDRA (WEST), MUMBAI, 400050",
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             }
         ]

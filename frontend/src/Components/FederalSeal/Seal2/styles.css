@@ -1,0 +1,43 @@
+
+.FederalSeal2-stamp {
+    /* width: 48mm; */
+    height: 29mm;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0px;
+}
+
+.FederalSeal2-title {
+    font-family: 'Diavlo', sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.FederalSeal2-branch {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.FederalSeal2-rectangle {
+    width: 26mm;
+    height: 12mm;
+    border: 0.5px solid black;
+    background-color: white;
+}
+
+.FederalSeal2-cash-paid {
+    font-family: 'CG Omega', sans-serif;
+    font-size: 16.3pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}

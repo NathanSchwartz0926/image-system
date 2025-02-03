@@ -47,6 +47,9 @@ const PageContextProvider = (props) => {
         CSB : {
           manager2: "A. BABITHA RAHMAN",
           empno2: "89479"
+        },
+        Federal : {
+            
         }
       });
 
@@ -55,6 +58,7 @@ const PageContextProvider = (props) => {
             const branchName = localStorage.getItem("branchName");
             // console.log(branchName)
             const response = await axios.post(backendUrl + "/api/bankAcc/getbankinfo", { branchName })
+            // console.log(response)
             if (response.data.success) {
                 await setBranchInfo(response.data.branchInfo)
             }
