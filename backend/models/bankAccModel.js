@@ -367,7 +367,7 @@ const initializeDatabase = async () => {
                 rolepwds: ["$2b$10$oJ0yndxEEwgAnSA7SgP3nOpkkfKzJbw3KaCo7uv8nquT.w8uvUwpO", "$2b$10$lEcAIzFeg2E1NqBdUsmc0.Q.vzYlkVeXaATRZpzd4dpoAfd7VpDNG"]
             }
         ]
-
+          
         // Insert sample data into the collection
         await bankAccModel.insertMany(sampleData);
 
@@ -380,7 +380,7 @@ const initializeDatabase = async () => {
 };
 
 // Call the function to initialize the database
-initializeDatabase();
+//initializeDatabase();
 
 
 export default bankAccModel

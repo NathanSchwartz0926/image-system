@@ -54,10 +54,11 @@ const Login = () => {
   }, [localStorage.getItem("login")])
 
   const [roleOption, setRoleOption] = useState('0');
-  const roles = ["Branch Head", "Head Office"]
+  const roles = ["Employee", "Head of Department", "Procurement Head"]
   const roleOptions = [
-    { value: '0', label: 'Branch Head' },
-    { value: '1', label: 'Head Office' },
+    { value: '0', label: 'Employee' },
+    { value: '1', label: 'Head of Department' },
+    { value: '2', label: 'Procurement Head'}
   ];
   const handleOptionChange = (event) => {
     setRoleOption(event.target.value);

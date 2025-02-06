@@ -33,8 +33,7 @@ const Navbar = () => {
       navigate('/orders')
   }
 
-  const roles = ["Branch Head",  "Head Office"]
-
+  const roles = ["Employee",  "Head of Department", "Procurement Head"]
 
   return (
     <div className='flex justify-between px-3 py-1 items-center border-b-2 border-slate-950 mb-2'>

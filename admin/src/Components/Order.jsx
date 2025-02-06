@@ -677,7 +677,7 @@ const Order = () => {
             </div>
             <div className="w-full mt-2 flex justify-center">
               {selectedProducts != undefined ? (
-                selectedProducts.length != 0 && order.state == 1 ? (
+                selectedProducts.length != 0 && order.state == 2 ? (
                   <button
                     className="bg-green-600 uppercase rounded-3xl py-2 px-6 active:scale-90 text-white"
                     onClick={onClickAccept}
