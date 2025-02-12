@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 // import '../Seal20/styles.css'
 
-const Seal20 = ({ branchName }) => {
+const Seal20 = ({ branchName, address }) => {
   useEffect(() => {
     import('../Seal20/styles.css');
   }, []);
@@ -11,8 +11,8 @@ const Seal20 = ({ branchName }) => {
       <div className="seal20-bank-name">ESAF Small Finance Bank Ltd.</div>
       <div className="seal20-branch-name">{branchName} BRANCH</div>
       <div className="seal20-address">
-        NO - 1597, ZERO MILE ROAD, ARARIA P O<br />
-        ARARIA DIST, BIHAR- 854311
+        {/* NO - 1597, ZERO MILE ROAD, ARARIA P O ARARIA DIST, BIHAR- 854311 */}
+        {address}
       </div>
     </div>
   );

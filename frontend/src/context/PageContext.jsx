@@ -38,20 +38,21 @@ const PageContextProvider = (props) => {
 
     const [managerData, setManagerData] = useState({
         ESAF: {
-          manager28: "NATHAN",
-          empno28: "12859",
-          manager29: "NATHANS",
-          manager30: "NATHANSCHWARTZ",
-          empno30: "12859",
+            address20: 'NO - 1597, ZERO MILE ROAD, ARARIA P O ARARIA DIST, BIHAR- 854311',
+            manager28: "NATHAN",
+            empno28: "12859",
+            manager29: "NATHANS",
+            manager30: "NATHANSCHWARTZ",
+            empno30: "12859",
         },
-        CSB : {
-          manager2: "A. BABITHA RAHMAN",
-          empno2: "89479"
+        CSB: {
+            manager2: "A. BABITHA RAHMAN",
+            empno2: "89479"
         },
-        Federal : {
-            
+        Federal: {
+
         }
-      });
+    });
 
     const getBranchInfo = async () => {
         try {
@@ -90,11 +91,11 @@ const PageContextProvider = (props) => {
     }
 
     const loadOneBranchOrder = async () => {
-        try{
+        try {
             const branchName = localStorage.getItem("branchName");
             const bankName = branchInfo.bankName
 
-            const response = await axios.post(backendUrl + "/api/order/oneBranch", {branchName, bankName})
+            const response = await axios.post(backendUrl + "/api/order/oneBranch", { branchName, bankName })
             console.log(response.data)
             if (response.data.success) {
                 // toast.success("Previous Order Information loaded Successfully")
@@ -108,9 +109,9 @@ const PageContextProvider = (props) => {
         }
     }
 
-    const updateOrderState = async(_id) => {
+    const updateOrderState = async (_id) => {
         try {
-            const response = await axios.post(backendUrl + "/api/order/stateUpdate", {_id, state:role })
+            const response = await axios.post(backendUrl + "/api/order/stateUpdate", { _id, state: role })
             if (response.data.success) {
                 toast.success("Order Updated Successfully")
             } else {
@@ -176,7 +177,7 @@ const PageContextProvider = (props) => {
     // useEffect(()=>{
     //     console.log(cart)
     // },[cart])
-   
+
 
     const [role, setRole] = useState("");
 
